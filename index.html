@@ -494,6 +494,14 @@
             }, 300); // Match the CSS transition duration
         });
     </script>
+<script>// Hide the dropdown when any link inside it is clicked
+        const dropdownLinks = document.querySelectorAll('#services-dropdown a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                servicesDropdown.style.display = 'none';
+            });
+        });
+        </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>
 </html>                          

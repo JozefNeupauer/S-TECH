@@ -503,6 +503,23 @@
                 servicesDropdown.style.display = 'none';
             });
         });
+    // Function to toggle the dropdown
+function toggleDropdown() {
+    const isVisible = servicesDropdown.style.display === 'block';
+    servicesDropdown.style.display = isVisible ? 'none' : 'block';
+    
+    // Show/hide dropdown on click
+servicesLink.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    toggleDropdown();
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
+        servicesDropdown.style.display = 'none';
+    }
+});
         
 
 // Show dropdown on click

@@ -482,68 +482,65 @@
         const servicesLink = document.getElementById('services-link');
         const servicesDropdown = document.getElementById('services-dropdown');
         
+        function isMobile() {
+            return window.innerWidth <= 600;
+        }
+
+        function toggleDropdown() {
+            const isVisible = servicesDropdown.style.display === 'block';
+            servicesDropdown.style.display = isVisible ? 'none' : 'block';
+        }
+
+        servicesLink.addEventListener('click', (e) => {
+            if (isMobile()) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                toggleDropdown();
+            }
+        });
+
         servicesLink.addEventListener('mouseenter', () => {
-            servicesDropdown.style.display = 'block';
-            servicesDropdown.style.opacity = '1';
-            servicesDropdown.style.transform = 'translateY(0)';
+            if (!isMobile()) {
+                servicesDropdown.style.display = 'block';
+                servicesDropdown.style.opacity = '1';
+                servicesDropdown.style.transform = 'translateY(0)';
+            }
         });
-        
+
+        servicesLink.addEventListener('mouseleave', () => {
+            if (!isMobile()) {
+                setTimeout(() => {
+                    if (!servicesDropdown.matches(':hover')) {
+                        servicesDropdown.style.display = 'none';
+                    }
+                }, 300); // Match the CSS transition duration
+            }
+        });
+
         servicesDropdown.addEventListener('mouseleave', () => {
-            servicesDropdown.style.opacity = '0';
-            servicesDropdown.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                servicesDropdown.style.display = 'none';
-            }, 300); // Match the CSS transition duration
+            if (!isMobile()) {
+                servicesDropdown.style.opacity = '0';
+                servicesDropdown.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    servicesDropdown.style.display = 'none';
+                }, 300); // Match the CSS transition duration
+            }
         });
-    </script>
-<script>// Hide the dropdown when any link inside it is clicked
-        const dropdownLinks = document.querySelectorAll('#services-dropdown a');
-        dropdownLinks.forEach(link => {
+
+        // Hide dropdown when clicking anywhere outside of it
+        document.addEventListener('click', (e) => {
+            if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
+                servicesDropdown.style.display = 'none';
+            }
+        });
+
+        // Hide dropdown when clicking on any link inside it
+        const serviceLinks = servicesDropdown.querySelectorAll('a');
+        serviceLinks.forEach(link => {
             link.addEventListener('click', () => {
                 servicesDropdown.style.display = 'none';
             });
         });
-        
-
-// Show dropdown on click
-servicesLink.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent the default anchor behavior
-    const isVisible = servicesDropdown.style.display === 'block';
-    servicesDropdown.style.display = isVisible ? 'none' : 'block';
-});
-
-// Hide dropdown when clicking anywhere outside of it
-document.addEventListener('click', (e) => {
-    if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
-        servicesDropdown.style.display = 'none';
-    }
-});
-        // Keep dropdown visible when mouse is over it
-servicesDropdown.addEventListener('mouseover', () => {
-    servicesDropdown.style.display = 'block';
-});
-// Hide dropdown when mouse leaves the link or the dropdown
-servicesLink.addEventListener('mouseout', () => {
-    setTimeout(() => {
-        if (!servicesDropdown.matches(':hover')) {
-            servicesDropdown.style.display = 'none';
-        }
-    }, 200); // Small delay to allow mouseover on dropdown
-});
-    // Toggle dropdown on click
-servicesLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isVisible = servicesDropdown.classList.contains('hidden');
-    servicesDropdown.classList.toggle('hidden', !isVisible);
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-    if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
-        servicesDropdown.classList.add('hidden');
-    }
-});
- </script>
+    </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>
-</html>                          
+</html>    

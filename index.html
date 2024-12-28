@@ -530,6 +530,19 @@ servicesLink.addEventListener('mouseout', () => {
         }
     }, 200); // Small delay to allow mouseover on dropdown
 });
+    // Toggle dropdown on click
+servicesLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isVisible = servicesDropdown.classList.contains('hidden');
+    servicesDropdown.classList.toggle('hidden', !isVisible);
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
+        servicesDropdown.classList.add('hidden');
+    }
+});
  </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>

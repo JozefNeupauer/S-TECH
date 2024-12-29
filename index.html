@@ -219,9 +219,17 @@
 </head>
 <body class="background">
     <header>
-    <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo" class="logo" style="height: 120px;">
+        <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo" class="logo" style="height: 120px;">
         <h1><button onclick="showSection('home');" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer;"><span style="color: gold;">S</span>-TECH Elektroinštalácie</button></h1>
         <p>Urban Selvek</p>
+    </header>
+    <style>
+        @media (max-width: 600px) {
+            header img.logo {
+                display: none;
+            }
+        }
+    </style>
     </header>
     
     <nav class="custom-font">

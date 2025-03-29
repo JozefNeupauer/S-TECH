@@ -303,25 +303,57 @@
         </section>
         <section id="Referencie" class="hidden">
             <div class="columns">
-             <!-- Photo Gallery Section -->
-             <div class="gallery-container1" style="width: 100%; max-width: 100%; margin: 0 auto;">
-                <div class="main-image-container" style="position: relative; text-align: center;">
-                    <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Main Image" id="mainImage" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
-                    <button class="arrow left" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
-                    <button class="arrow right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
-                </div>
-                <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-                    <div style="display: flex; gap: 10px; padding: 0 10px;">
-                        <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 1" class="thumbnail active" style="height: 80px; cursor: pointer;">
-                        <img src="https://i.postimg.cc/yNSZTPqS/462559640-1102625198138584-5721448417156153081-n.jpg" alt="Thumbnail 2" class="thumbnail" style="height: 80px; cursor: pointer;">
-                        <img src="https://i.postimg.cc/tJ6Cd7Zd/462548218-584505684312106-6742665162721435938-n.jpg" alt="Thumbnail 3" class="thumbnail" style="height: 80px; cursor: pointer;">
-                        <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 4" class="thumbnail " style="height: 80px; cursor: pointer;">
-                        <img src="https://i.postimg.cc/yNSZTPqS/462559640-1102625198138584-5721448417156153081-n.jpg" alt="Thumbnail 5" class="thumbnail" style="height: 80px; cursor: pointer;">
-                        <img src="https://i.postimg.cc/tJ6Cd7Zd/462548218-584505684312106-6742665162721435938-n.jpg" alt="Thumbnail 6" class="thumbnail" style="height: 80px; cursor: pointer;">
+                <!-- Photo Gallery Section -->
+                <div class="gallery-container1" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                    <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Elektroinštalácia</h3>
+                    <div class="main-image-container" style="position: relative; text-align: center;">
+                        <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Main Image" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
+                        <button class="arrow left" onclick="navigateGallery('.gallery-container1', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
+                        <button class="arrow right" onclick="navigateGallery('.gallery-container1', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
+                    </div>
+                    <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
+                        <div style="display: flex; gap: 10px; padding: 0 10px; flex-wrap: nowrap;">
+                            <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Thumbnail 1" class="thumbnail active" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
+                            <img src="https://i.postimg.cc/85NBSMZ1/Whats-App-Image-2025-03-12-at-20-18-33.jpg" alt="Thumbnail 2" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
+                            <img src="https://i.postimg.cc/bwSRHzGj/elektro-5.jpg" alt="Thumbnail 3" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/YSczdJgL/elektro-4.jpg" alt="Thumbnail 4" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/wT16VP9p/Whats-App-Image-2025-03-12-at-20-18-33-1.jpg" alt="Thumbnail 5" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Thumbnail 6" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg" alt="Thumbnail 7" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/tJXzbWC3/Whats-App-Image-2025-03-12-at-20-18-34.jpg" alt="Thumbnail 8" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/2Sq7CzmK/Whats-App-Image-2025-03-12-at-20-18-32.jpg" alt="Thumbnail 9" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 10" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/Yq8ttH8Y/image.png" alt="Thumbnail 11" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                            <img src="https://i.postimg.cc/DzGV4kQC/image.png" alt="Thumbnail 12" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
+
+                <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;">
+                    <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Fotovoltaika, bleskozvod a elektroprípojky</h3>
+                    <div class="main-image-container" style="position: relative; text-align: center;">
+                        <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Main Image 2" class="mainImage" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
+                        <button class="arrow left" onclick="navigateGallery('.gallery-container2', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
+                        <button class="arrow right" onclick="navigateGallery('.gallery-container2', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
+                    </div>
+                    <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
+                        <div style="display: flex; gap: 10px; padding: 0 10px;">
+                            <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Image of a completed project 1" class="thumbnail thumbnail2 active">
+                            <img src="https://i.postimg.cc/hvYbmjq6/Whats-App-Image-2025-03-12-at-20-18-27.jpg" alt="Image of a completed project 2" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/nLQzVhdM/image.png" alt="Image of a completed project 3" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/XqM32K3g/b1594224-d46b-489b-bf2f-5b9a49437d2c.jpg" alt="Image of a completed project 4" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/rmNqz05y/Whats-App-Image-2025-03-12-at-20-18-29-1.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/8cWkDKw3/IMG-0741.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/5048XzDn/Whats-App-Image-2025-03-12-at-20-18-30-2.jpg" alt="Image of a completed project 4" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/x87mp484/Whats-App-Image-2025-03-12-at-20-18-35.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/9Qy911hL/f6364e52-9a5b-4e8d-9bd9-c87aa6b94d71.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/Gtstth3X/image.png" alt="Image of a completed project 4" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/dtPrCzMh/Whats-App-Image-2025-03-12-at-20-18-32-2.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2">
+                            <img src="https://i.postimg.cc/52fz7L21/Whats-App-Image-2025-03-12-at-20-18-32-1.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2">
+                        </div>
+                    </div>
+                </div>
+                </div>
         </section>
         <section id="contact" class="hidden">
             <h2>Kontakt</h2>
@@ -418,12 +450,9 @@
             </div>
         </section>
         </div>
-        <footer style="background-color: #1e3c72; color: white; text-align: center; padding: 1rem 0; position: relative; width: 100%;">
-            <p>&copy; 2023 S-TECH Elektroinštalácie. All rights reserved.</p>
-            <p>Kontaktuj nás: <a href="mailto:uselvek@gmail.com" style="color: white; text-decoration: none;">uselvek@gmail.com</a> | Tel: <a href="tel:+421907419466" style="color: white; text-decoration: none;">+421 907 419 466</a></p>
-        </footer>
 </body>
 <script>
+    
 </script>
     <script>
         
@@ -597,6 +626,35 @@
                 alert("Failed to send message. Please try again later.");
             }
         }
+    </script>
+    <script>
+    
+    function addThumbnailClicks(galleryQuery) {
+        const thumbnails = document.querySelectorAll(galleryQuery + ' .thumbnail');
+        const mainImage = document.querySelector(galleryQuery + ' .mainImage');
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                mainImage.src = thumbnails[index].src;
+                thumbnails[index].classList.add('active');
+            });
+        });
+    }
+    
+    addThumbnailClicks(".gallery-container1")
+    addThumbnailClicks(".gallery-container2")
+    
+    function navigateGallery(galleryQuery, direction) {
+        const thumbnails = document.querySelectorAll(galleryQuery + ' .thumbnail');
+        const mainImage = document.querySelector(galleryQuery + ' .mainImage');
+        let currentIndex = Array.from(thumbnails).findIndex(thumb => thumb.classList.contains('active'));
+
+        currentIndex = (currentIndex + direction + thumbnails.length) % thumbnails.length;
+
+        mainImage.src = thumbnails[currentIndex].src;
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        thumbnails[currentIndex].classList.add('active');
+    }
     </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>

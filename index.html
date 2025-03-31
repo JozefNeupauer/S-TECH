@@ -215,6 +215,73 @@
                 flex: 1 1 auto; /* Reset width for vertical stacking */
             }
         }
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease 2s forwards;
+        }
+
+        #loading-screen img {
+            width: 150px;
+            height: auto;
+            animation: scaleUp 2s ease;
+        }
+
+        #loading-screen h1, #loading-screen p {
+            color: white;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        #loading-screen h1 {
+            font-size: 2rem;
+            animation-delay: 0.5s;
+        }
+
+        #loading-screen p {
+            font-size: 1.2rem;
+            animation-delay: 1s;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
         </style>
 </head>
 <script type="text/javascript"
@@ -225,7 +292,20 @@
       emailjs.init("KWFVu114nlNQgPdFV");
    })();
 </script>
+<script>
+    window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 2500); // Matches the fadeOut animation duration
+    });
+</script>
 <body class="background">
+    <div id="loading-screen">
+        <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo">
+        <h1>S-TECH Elektroinštalácie</h1>
+        <p>Urban Selvek</p>
+    </div>
     <header>
         <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo" class="logo" style="height: 120px;">
         <h1><button onclick="showSection('home');" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer;"><span style="color: gold;">S</span>-TECH Elektroinštalácie</button></h1>
@@ -388,12 +468,12 @@
                 <textarea id="message" name="message" rows="5" required></textarea><br><br>
         
                 <button type="submit">Send Message</button>
-            </form>
-       
-       
+            </section>
+            <section id="elektroinstalacie" class="hidden" style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease;">
+                <h2 style="text-align:left;">Kompletné elektroinštalácie – spoľahlivosť a kvalita</h2>
         </section>
         <section id="elektroinstalacie" class="hidden">
-            <h2  style="text-align:left;">Kompletné elektroinštalácie – spoľahlivosť a kvalita</h2>
+            <h2 style="text-align:left;">Kompletné elektroinštalácie – spoľahlivosť a kvalita</h2>
             <p>Naša spoločnosť sa špecializuje na elektroinštalačné práce všetkého druhu. Od nových inštalácií až po rekonštrukcie starších rozvodov – vždy dbáme na odbornosť, bezpečnosť a precíznosť.</p>
             <p>Naše služby zahŕňajú:</p>
             <ul>
@@ -666,7 +746,7 @@
             try {
                 await emailjs.send(serviceID, templateID, params);
                 if (nameElement) nameElement.value = "";
-                if (emailElement) nameElement.value = "";
+                if (emailElement) emailElement.value = "";
                 if (messageElement) messageElement.value = "";
                 alert("Your message has been sent successfully!");
             } catch (err) {

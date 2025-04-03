@@ -291,7 +291,7 @@
         }
 
 .content {
-    width: 50%;
+    width: 100%;
 }
 
 .image-container {
@@ -415,19 +415,14 @@
             <div class="container2">
             <div class="content">
                 <h2>O nás</h2>
-                    <p>Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.</p>
-                </div>
-        
-                <div class="image-container">
-                    <img src="images/about-us.jpg" alt="Elektroinštalačné práce" class="responsive-img">
-                </div>
+                    <p>Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.Sme mladý, dynamický tím, ktorý sa neustále vzdeláva a sleduje nové trendy v oblasti elektroinštalácií. Inovácie a moderné technológie sú pre nás štandardom, vďaka čomu si poradíme aj s najnáročnejšími projektmi.</p>
+                </div>   
             </div>
         
             <div class="container2">
                 <h2>Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
-                <p>Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou.</p>
-                
-                <p>Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
+                <p>Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou.
+                 Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
             </div>
         
             <div class="container2 services">
@@ -443,10 +438,26 @@
                     <li>✔ Inštaláciu a servis fotovoltaických systémov</li>
                     <li>✔ Odborné revízie a certifikácie elektroinštalácií</li>
                 </ul>
-        
-                <div class="image-container">
-                    <img id="slideshow-image" style ="height:100%" src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg alt="Elektroinštalácia" class="responsive-img">
-                </div>
+        <div class="image-container" style="text-align: center; display: none;" id="mobile-hidden-slideshow">
+            <img id="slideshow-image" style="width: 100%; height: auto;" src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Elektroinštalácia" class="responsive-img">
+        </div>
+        <script>
+            // Hide the slideshow on mobile
+            function toggleSlideshowVisibility() {
+                const slideshow = document.getElementById('mobile-hidden-slideshow');
+                if (window.innerWidth <= 600) {
+                    slideshow.style.display = 'none';
+                } else {
+                    slideshow.style.display = 'block';
+                }
+            }
+
+            // Run on load and resize
+            window.addEventListener('load', toggleSlideshowVisibility);
+            window.addEventListener('resize', toggleSlideshowVisibility);
+        </script>
+                
+                </style>
             </div>     
             <div class="container2 why-choose-us">
                 <h2>Prečo si vybrať práve nás?</h2>
@@ -458,11 +469,13 @@
                     <li>✔ Neustále sledujeme technologické trendy a inovácie</li>
                 </ul>
         
-                <p>Hľadáte spoľahlivé a profesionálne elektroinštalačné riešenie? Neváhajte nás kontaktovať – sme tu pre vás!</p>
+                <p style="font-size: 1.rem; font-weight: bold; ; padding: 10px; text-align: center;">
+                    Hľadáte spoľahlivé a profesionálne elektroinštalačné riešenie? Neváhajte nás kontaktovať – sme tu pre vás!
+                </p>
         
-                <div class="image-container">
+                <!--<div class="image-container">
                     <img src="images/professional-team.jpg" alt="Tím elektrikárov pri práci" class="responsive-img">
-                </div>
+                </div>  -->
             </div>
         </section>
         <section id="Referencie" class="hidden">
@@ -493,7 +506,7 @@
                 </div>
             </div>
 
-            <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;"></div>
+            <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;"><
                 <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Fotovoltaika, bleskozvod a elektroprípojky</h3>
                 <div class="main-image-container" style="position: relative; text-align: center;">
                 <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Main Image 2" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
@@ -576,7 +589,7 @@
                 <li>Údržbu a servis kamerových systémov</li>
                 <li>Integráciu s existujúcimi bezpečnostnými systémami</li>
             </ul>
-            </div>
+            
         </section>
         <section id="zabezpecovacie-zariadenia" class="hidden">
             <h2>Zabezpečovacie zariadenia – maximálna ochrana vášho majetku</h2>
@@ -590,6 +603,7 @@
                 <li>✔ Pravidelnú údržbu a kontrolu zabezpečovacích zariadení – dlhodobá spoľahlivosť a funkčnosť</li>
             </ul>
             <p>Pracujeme s overenými značkami a systémami, ktoré zaručujú vysoký štandard ochrany. Či už potrebujete základné zabezpečenie domácnosti alebo komplexný systém pre firemné priestory, nájdeme pre vás optimálne riešenie.</p>
+            
         </section>
         <section id="fotovoltika" class="hidden">
             <h2>Fotovoltika na kľúč – efektívne a profesionálne riešenie</h2>
@@ -856,4 +870,3 @@
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>
 </html>
-

@@ -282,6 +282,50 @@
                 visibility: hidden;
             }
         }
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+.content {
+    width: 50%;
+}
+
+.image-container {
+    width: 45%;
+    text-align: center;
+}
+
+.responsive-img {
+    width: 100%;
+    height: fixed;
+    border-radius: 10px;
+}
+
+.center {
+    list-style: none;
+    padding: 0;
+}
+
+.center li {
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if the parent has a height) */
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust spacing between images */
+}
+
+.gallery-container img {
+    max-width: 100%; /* Ensures images scale properly */
+    height: auto;
+}
         </style>
 </head>
 <script type="text/javascript"
@@ -324,10 +368,10 @@
         <a href="#home" onclick="showSection('home'); return false;">Niečo o nás</a>
         <a href="#services" id="services-link">Naše Služby</a>
         <div id="services-dropdown" class="hidden">
-            <a href="#elektroinstalacie" onclick="showSection('elektroinstalacie'); return false;">Kompletná elektroinštalácia</a>
-            <a href="#zabezpecovacie-zariadenia" onclick="showSection('zabezpecovacie-zariadenia'); return false;">Zabezpečovacie zariadenia</a>
-            <a href="#fotovoltika" onclick="showSection('fotovoltika'); return false;">Fotovoltika na kľúč – efektívne a profesionálne riešenie</a>
-            <a href="#inteligentna-domacnost" onclick="showSection('inteligentna-domacnost'); return false;">Inteligentná domácnosť</a>
+            <a href="#elektroinstalacie" onclick="showSection('elektroinstalacie'); window.scrollTo(0, 0); return false;">Kompletná elektroinštalácia</a>
+            <a href="#zabezpecovacie-zariadenia" onclick="showSection('zabezpecovacie-zariadenia'); window.scrollTo(0, 0); return false;">Zabezpečovacie zariadenia</a>
+            <a href="#fotovoltika" onclick="showSection('fotovoltika'); window.scrollTo(0, 0); return false;">Fotovoltika na kľúč – efektívne a profesionálne riešenie</a>
+            <a href="#inteligentna-domacnost" onclick="showSection('inteligentna-domacnost'); window.scrollTo(0, 0); return false;">Inteligentná domácnosť</a>
         </div>
         <a href="#Referencie" onclick="showSection('Referencie'); return false;">Referencie</a>
         <a href="#contact" onclick="showSection('contact'); return false;">Kontakt</a>
@@ -367,87 +411,114 @@
                 <li>Inteligentná domácnosť</li>
             </ul>
         </section>
-        <section id="home" class="">
-            <h2>Niečo o nás</h2>
-            <p>Špecializujeme sa na kompletné elektroinštalácie, rekonštrukcie a montáže bleskozvodov pre rôzne stavebné objekty, byty a rodinné domy, vrátane vyhotovenia revízií. Naša práca je v súlade s platnými normami, pričom vždy dbáme na vysokú kvalitu.</p>
-            <h2>Elektrika na kľúč – všetko pod jednou strechou</h2>
-            <p>Poskytujeme kompletné elektroinštalácie na kľúč – od prvotného návrhu, cez montáž až po finálne revízie a odovzdanie plne funkčného systému. Či už ide o novostavby, rekonštrukcie, priemyselné objekty alebo inteligentné domácnosti, vždy sa prispôsobíme individuálnym požiadavkám zákazníka.</p>
-            <p>Sme mladý, dynamický tím, ktorý sa neustále vzdeláva a sleduje nové trendy v oblasti elektroinštalácií. Inovácie a moderné technológie sú pre nás štandardom, vďaka čomu si poradíme aj s najnáročnejšími projektmi.</p>
-            <p>Naša ponuka zahŕňa:</p>
-            <ul class="center">
-                <li>✔ Kompletné elektroinštalácie pre byty, domy a priemyselné objekty</li>
-                <li>✔ Rekonštrukcie a modernizácie starých elektroinštalácií</li>
-                <li>✔ Inštaláciu kamerových systémov</li>
-                <li>✔ Montáž zabezpečovacích zariadení</li>
-                <li>✔ Elektroprípojky – od projektu až po realizáciu</li>
-                <li>✔ Inteligentné elektroinštalácie a smart home riešenia</li>
-                <li>✔ Regulačné systémy pre zónové riadenie kúrenia a osvetlenia</li>
-                <li>✔ Montáž bleskozvodov a uzemnenia</li>
-                <li>✔ Inštaláciu a servis fotovoltaických systémov</li>
-                <li>✔ Odborné revízie a certifikácie elektroinštalácií</li>
-            </ul>
-            <p>Prečo si vybrať nás?</p>
-            <ul class="center">
-                <li>✔ Profesionálny prístup a kvalitná práca</li>
-                <li>✔ Rýchle a spoľahlivé riešenia</li>
-                <li>✔ Flexibilita a individuálny prístup ku každému zákazníkovi</li>
-                <li>✔ Používame len overené a certifikované materiály</li>
-                <li>✔ Sledujeme najnovšie trendy a technológie</li>
-            </ul>
-            <p>Neexistuje výzva, s ktorou by sme si neporadili. Ak potrebujete spoľahlivé elektroinštalačné riešenie na kľúč, neváhajte nás kontaktovať!</p>
+        <section id="home" class="about-section">
+            <div class="container2">
+            <div class="content">
+                <h2>O nás</h2>
+                    <p>Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.</p>
+                </div>
+        
+                <div class="image-container">
+                    <img src="images/about-us.jpg" alt="Elektroinštalačné práce" class="responsive-img">
+                </div>
+            </div>
+        
+            <div class="container2">
+                <h2>Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
+                <p>Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou.</p>
+                
+                <p>Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
+            </div>
+        
+            <div class="container2 services">
+                <h2>Naša ponuka zahŕňa:</h2>
+                <ul class="center">
+                    <li>✔ Kompletné elektroinštalácie pre byty, domy a priemyselné objekty</li>
+                    <li>✔ Rekonštrukcie a modernizácie starých elektroinštalácií</li>
+                    <li>✔ Inštaláciu kamerových a zabezpečovacích systémov</li>
+                    <li>✔ Realizáciu elektroprípojok – od projektu po montáž</li>
+                    <li>✔ Inteligentné elektroinštalácie a smart home riešenia</li>
+                    <li>✔ Regulačné systémy pre zónové riadenie kúrenia a osvetlenia</li>
+                    <li>✔ Montáž bleskozvodov a uzemnenia</li>
+                    <li>✔ Inštaláciu a servis fotovoltaických systémov</li>
+                    <li>✔ Odborné revízie a certifikácie elektroinštalácií</li>
+                </ul>
+        
+                <div class="image-container">
+                    <img id="slideshow-image" style ="height:100%" src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg alt="Elektroinštalácia" class="responsive-img">
+                </div>
+            </div>     
+            <div class="container2 why-choose-us">
+                <h2>Prečo si vybrať práve nás?</h2>
+                <ul class="center">
+                    <li>✔ Profesionálny prístup a vysoká kvalita služieb</li>
+                    <li>✔ Rýchle a spoľahlivé riešenia šité na mieru</li>
+                    <li>✔ Flexibilita a individuálny prístup ku každému zákazníkovi</li>
+                    <li>✔ Používame len certifikované a overené materiály</li>
+                    <li>✔ Neustále sledujeme technologické trendy a inovácie</li>
+                </ul>
+        
+                <p>Hľadáte spoľahlivé a profesionálne elektroinštalačné riešenie? Neváhajte nás kontaktovať – sme tu pre vás!</p>
+        
+                <div class="image-container">
+                    <img src="images/professional-team.jpg" alt="Tím elektrikárov pri práci" class="responsive-img">
+                </div>
+            </div>
         </section>
         <section id="Referencie" class="hidden">
-            <div class="columns">
-                <!-- Photo Gallery Section -->
-                <div class="gallery-container1" style="width: 100%; max-width: 100%; margin: 0 auto;">
-                    <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Elektroinštalácia</h3>
-                    <div class="main-image-container" style="position: relative; text-align: center;">
-                        <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Main Image" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
-                        <button class="arrow left" onclick="navigateGallery('.gallery-container1', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
-                        <button class="arrow right" onclick="navigateGallery('.gallery-container1', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
-                    </div>
-                    <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-                        <div style="display: flex; gap: 10px; padding: 0 10px; flex-wrap: nowrap;">
-                            <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Thumbnail 1" class="thumbnail active" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
-                            <img src="https://i.postimg.cc/85NBSMZ1/Whats-App-Image-2025-03-12-at-20-18-33.jpg" alt="Thumbnail 2" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
-                            <img src="https://i.postimg.cc/bwSRHzGj/elektro-5.jpg" alt="Thumbnail 3" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/YSczdJgL/elektro-4.jpg" alt="Thumbnail 4" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/wT16VP9p/Whats-App-Image-2025-03-12-at-20-18-33-1.jpg" alt="Thumbnail 5" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Thumbnail 6" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg" alt="Thumbnail 7" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/tJXzbWC3/Whats-App-Image-2025-03-12-at-20-18-34.jpg" alt="Thumbnail 8" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/2Sq7CzmK/Whats-App-Image-2025-03-12-at-20-18-32.jpg" alt="Thumbnail 9" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 10" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/Yq8ttH8Y/image.png" alt="Thumbnail 11" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                            <img src="https://i.postimg.cc/DzGV4kQC/image.png" alt="Thumbnail 12" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                        </div>
-                    </div>
+            <div class="columns" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <!-- Photo Gallery Section -->
+            <div class="gallery-container1" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Elektroinštalácia</h3>
+                <div class="main-image-container" style="position: relative; text-align: center;">
+                <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Main Image" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
+                <button class="arrow left" onclick="navigateGallery('.gallery-container1', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
+                <button class="arrow right" onclick="navigateGallery('.gallery-container1', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
                 </div>
+                <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
+                <div style="display: flex; gap: 10px; padding: 0 10px; flex-wrap: nowrap;"></div>
+                    <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Thumbnail 1" class="thumbnail active" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
+                    <img src="https://i.postimg.cc/85NBSMZ1/Whats-App-Image-2025-03-12-at-20-18-33.jpg" alt="Thumbnail 2" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
+                    <img src="https://i.postimg.cc/bwSRHzGj/elektro-5.jpg" alt="Thumbnail 3" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/YSczdJgL/elektro-4.jpg" alt="Thumbnail 4" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/wT16VP9p/Whats-App-Image-2025-03-12-at-20-18-33-1.jpg" alt="Thumbnail 5" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Thumbnail 6" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg" alt="Thumbnail 7" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/tJXzbWC3/Whats-App-Image-2025-03-12-at-20-18-34.jpg" alt="Thumbnail 8" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/2Sq7CzmK/Whats-App-Image-2025-03-12-at-20-18-32.jpg" alt="Thumbnail 9" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 10" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/Yq8ttH8Y/image.png" alt="Thumbnail 11" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                    <img src="https://i.postimg.cc/DzGV4kQC/image.png" alt="Thumbnail 12" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
+                </div>
+                </div>
+            </div>
 
-                <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;">
-                    <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Fotovoltaika, bleskozvod a elektroprípojky</h3>
-                    <div class="main-image-container" style="position: relative; text-align: center;">
-                        <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Main Image 2" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
-                        <button class="arrow left" onclick="navigateGallery('.gallery-container2', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
-                        <button class="arrow right" onclick="navigateGallery('.gallery-container2', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
-                    </div>
-                    <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-                        <div style="display: flex; gap: 10px; padding: 0 10px;">
-                            <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Image of a completed project 1" class="thumbnail thumbnail2 active" onclick="navigateGallery('.gallery-container2', 0)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/hvYbmjq6/Whats-App-Image-2025-03-12-at-20-18-27.jpg" alt="Image of a completed project 2" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 1)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/nLQzVhdM/image.png" alt="Image of a completed project 3" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 2)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/XqM32K3g/b1594224-d46b-489b-bf2f-5b9a49437d2c.jpg" alt="Image of a completed project 4" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 3)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/rmNqz05y/Whats-App-Image-2025-03-12-at-20-18-29-1.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 4)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/8cWkDKw3/IMG-0741.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 5)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/5048XzDn/Whats-App-Image-2025-03-12-at-20-18-30-2.jpg" alt="Image of a completed project 7" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 6)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/x87mp484/Whats-App-Image-2025-03-12-at-20-18-35.jpg" alt="Image of a completed project 8" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 7)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/9Qy911hL/f6364e52-9a5b-4e8d-9bd9-c87aa6b94d71.jpg" alt="Image of a completed project 9" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 8)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/Gtstth3X/image.png" alt="Image of a completed project 10" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 9)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/dtPrCzMh/Whats-App-Image-2025-03-12-at-20-18-32-2.jpg" alt="Image of a completed project 11" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 10)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                            <img src="https://i.postimg.cc/52fz7L21/Whats-App-Image-2025-03-12-at-20-18-32-1.jpg" alt="Image of a completed project 12" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 11)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                        </div>
-                    </div>
-                        </div>
+            <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;"></div>
+                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Fotovoltaika, bleskozvod a elektroprípojky</h3>
+                <div class="main-image-container" style="position: relative; text-align: center;">
+                <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Main Image 2" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
+                <button class="arrow left" onclick="navigateGallery('.gallery-container2', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
+                <button class="arrow right" onclick="navigateGallery('.gallery-container2', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
+                </div>
+                <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
+                <div style="display: flex; gap: 10px; padding: 0 10px;">
+                    <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Image of a completed project 1" class="thumbnail thumbnail2 active" onclick="navigateGallery('.gallery-container2', 0)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/hvYbmjq6/Whats-App-Image-2025-03-12-at-20-18-27.jpg" alt="Image of a completed project 2" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 1)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/nLQzVhdM/image.png" alt="Image of a completed project 3" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 2)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/XqM32K3g/b1594224-d46b-489b-bf2f-5b9a49437d2c.jpg" alt="Image of a completed project 4" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 3)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/rmNqz05y/Whats-App-Image-2025-03-12-at-20-18-29-1.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 4)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/8cWkDKw3/IMG-0741.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 5)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/5048XzDn/Whats-App-Image-2025-03-12-at-20-18-30-2.jpg" alt="Image of a completed project 7" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 6)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/x87mp484/Whats-App-Image-2025-03-12-at-20-18-35.jpg" alt="Image of a completed project 8" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 7)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/9Qy911hL/f6364e52-9a5b-4e8d-9bd9-c87aa6b94d71.jpg" alt="Image of a completed project 9" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 8)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/Gtstth3X/image.png" alt="Image of a completed project 10" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 9)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/dtPrCzMh/Whats-App-Image-2025-03-12-at-20-18-32-2.jpg" alt="Image of a completed project 11" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 10)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                    <img src="https://i.postimg.cc/52fz7L21/Whats-App-Image-2025-03-12-at-20-18-32-1.jpg" alt="Image of a completed project 12" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 11)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
                     </div>
                 </div>
                 </div>
@@ -485,9 +556,15 @@
             <p>Moderné riešenia, na ktoré sa môžete spoľahnúť</p>
             <p>Pracujeme s najnovšími technológiami a normami, aby sme vám zabezpečili maximálnu kvalitu a spoľahlivosť. Neustále sa vzdelávame a sledujeme nové trendy v oblasti elektroinštalácií.</p>
             <p>Nech už ide o byt, dom, priemyselný objekt alebo kancelárie, vždy nájdeme najlepšie riešenie pre vaše potreby.</p>
-            <div class="gallery" style="display: flex; justify-content: center; gap: 20px; padding: 40px; overflow-x: auto;">
+            <div class="gallery" style="display: flex; justify-content: center; padding: 40px; overflow-x: auto;">
                 <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
                     <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Picture 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
+                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
+                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
                     <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: 100%; object-fit: cover;">
@@ -578,12 +655,6 @@
                 </div>
         </section>
         </div>
-<footer style="position: relative; bottom: 0; width: 100%; background-color: #1e3c72; color: white; text-align: center; padding: 0.5rem; font-size: 0.8rem; z-index: 100;">
-        <div style="display: flex; flex-direction: column; align-items: center;"></div>
-            <p>&copy; 2023 S-TECH Elektroinštalácie. All rights reserved.</p>
-            <p>Contact: <a href="mailto:uselvek@gmail.com" style="color: white; text-decoration: underline;">uselvek@gmail.com</a> | Tel: +421 907 419 466</p>
-        </div>
-    </footer>
 </body>
 <script>
     
@@ -789,7 +860,27 @@
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
         thumbnails[currentIndex].classList.add('active');
     }
+
+    
+    </script>
+     <script>
+        const images = [
+            "https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg",
+            "https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg",
+            "https://i.postimg.cc/Gtstth3X/image.png",
+            "https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg",
+        ];
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            const slideshowImage = document.getElementById("slideshow-image");
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            slideshowImage.src = images[currentImageIndex];
+        }
+
+        setInterval(changeImage, 5000); // Change image every 5 seconds
     </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
 </body>
 </html>
+

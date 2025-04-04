@@ -365,7 +365,7 @@
     </header>
     
     <nav class="custom-font">
-        <a href="#home" onclick="showSection('home'); return false;">Niečo o nás</a>
+        <a href="#home" onclick="showSection('home');window.scrollTo(0, 0); return false;">Niečo o nás</a>
         <a href="#services" id="services-link">Naše Služby</a>
         <div id="services-dropdown" class="hidden">
             <a href="#elektroinstalacie" onclick="showSection('elektroinstalacie'); window.scrollTo(0, 0); return false;">Kompletná elektroinštalácia</a>
@@ -441,22 +441,28 @@
         <div class="image-container" style="text-align: center; display: none;" id="mobile-hidden-slideshow">
             <img id="slideshow-image" style="width: 100%; height: auto;" src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Elektroinštalácia" class="responsive-img">
         </div>
-        <script>
-            // Hide the slideshow on mobile
-            function toggleSlideshowVisibility() {
-                const slideshow = document.getElementById('mobile-hidden-slideshow');
-                if (window.innerWidth <= 600) {
-                    slideshow.style.display = 'none';
-                } else {
-                    slideshow.style.display = 'block';
-                }
+    <script>
+        // Adjust the slideshow visibility and size on mobile
+        function adjustSlideshowVisibilityAndSize() {
+            const slideshow = document.getElementById('mobile-hidden-slideshow');
+            const slideshowImage = document.getElementById('slideshow-image');
+            if (window.innerWidth <= 600) {
+                slideshow.style.display = 'block';
+                slideshow.style.width = '100%';
+                slideshowImage.style.width = '100%';
+                slideshowImage.style.height = 'auto';
+            } else {
+                slideshow.style.display = 'block';
+                slideshow.style.width = '45%';
+                slideshowImage.style.width = '100%';
+                slideshowImage.style.height = 'auto';
             }
+        }
 
-            // Run on load and resize
-            window.addEventListener('load', toggleSlideshowVisibility);
-            window.addEventListener('resize', toggleSlideshowVisibility);
-        </script>
-                
+        // Run on load and resize
+        window.addEventListener('load', adjustSlideshowVisibilityAndSize);
+        window.addEventListener('resize', adjustSlideshowVisibilityAndSize);
+    </script>
                 </style>
             </div>     
             <div class="container2 why-choose-us">
@@ -539,8 +545,7 @@
         </section>
         <section id="contact" class="hidden">
             <h2>Kontakt</h2>
-            <p>Kontaktujte nás na emailovej adrese: uselvek@gmail.com alebo telefonicky na čísle: +421 907 419 466.</p>
-            <h1>Kontaktujte nás</h1>
+            <p>Kontaktujte nás na emailovej adrese: uselvek@gmail.com alebo telefonicky na čísle: +421 907 419 466. V prípade nedostupnosti sa obráťte na číslo: +421 951 036 186.</h1>
             <form action="" method="post" onsubmit="sendMail(); return false;">
                 <label for="name">Meno:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
@@ -569,13 +574,36 @@
             <p>Moderné riešenia, na ktoré sa môžete spoľahnúť</p>
             <p>Pracujeme s najnovšími technológiami a normami, aby sme vám zabezpečili maximálnu kvalitu a spoľahlivosť. Neustále sa vzdelávame a sledujeme nové trendy v oblasti elektroinštalácií.</p>
             <p>Nech už ide o byt, dom, priemyselný objekt alebo kancelárie, vždy nájdeme najlepšie riešenie pre vaše potreby.</p>
-            <div class="gallery" style="display: flex; justify-content: center; padding: 40px; overflow-x: auto;">
+            <div class="gallery" style="display: flex; justify-content: center; padding: 20px; overflow-x: auto; gap: 10px; flex-wrap: wrap;">
                 <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
                     <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Picture 1" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
-                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: auto; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
+                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: auto; object-fit: cover;">
                 </div>
+            </div>
+            <style>
+                @media (max-width: 600px) {
+                    .gallery {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+                    .frame {
+                        width: 100%;
+                        max-width: none;
+                    }
+                }
+                @media (min-width: 601px) {
+                    .gallery {
+                        flex-direction: row;
+                        gap: 10px;
+                    }
+                    .frame {
+                        width: 300px;
+                        max-width: 300px;
+                    }
+                }
+            </style>
             </div>
             </div>
         </section>
@@ -642,8 +670,39 @@
             <p>Sme profesionáli v oblasti inteligentných domácností a neustále sledujeme najnovšie trendy v automatizácii a smart technológiách. Naše riešenia sú spoľahlivé, moderné a šité na mieru.</p>
         </section>
         </div>
-</body>
+        <footer id="page-footer" style="background-color: #1e3c72; color: white; text-align: center; padding: 1rem; position: fixed; bottom: -100px; width: 100%; transition: bottom 0.3s ease; visibility: hidden;">
+            <p onclick="alert('Email:jozef.neupauer123@gmail.com\nPhone: +421 951 036 186');" style="cursor: pointer;">&copy; 2025 S-TECH Elektroinštalácie. Designed by Jozef Neupauer</p>
+        </footer>
+        <script>
+            window.addEventListener('scroll', () => {
+            const footer = document.getElementById('page-footer');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            if (scrollPosition >= documentHeight) {
+                footer.style.visibility = 'visible';
+                footer.style.bottom = '0';
+            } else {
+                footer.style.visibility = 'hidden';
+                footer.style.bottom = '-100px';
+            }
+            });
+        </script>
+        <script>
+            window.addEventListener('scroll', () => {
+            const footer = document.getElementById('page-footer');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            if (scrollPosition >= documentHeight) {
+                footer.style.bottom = '0';
+            } else {
+                footer.style.bottom = '-100px';
+            }
+            });
+        </script>
 <script>
+    
     
 </script>
     <script>
@@ -868,5 +927,14 @@
         setInterval(changeImage, 5000); // Change image every 5 seconds
     </script>
 <!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Phone number copied: ' + text);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+</script>
 </body>
 </html>

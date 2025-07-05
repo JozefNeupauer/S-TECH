@@ -1,949 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html style="font-size: 16px;" lang="sk-SK"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S-TECH Elektroinštalácie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color:whitesmoke;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient( 90deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        header img.logo {
-            position: absolute;
-            top: 50%;
-            left: 50px;
-            transform: translateY(-40%);
-            height: 80px; /* Adjust the height as needed */
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        header p {
-            margin: 0;
-            font-size: 1.2rem;
-        }   
-        nav {
-            background-color: #2a5298;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.2rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            background-color: white;
-            color: #2a5298;
-            border-radius: 5px;
-        }
-        .bordered-text {
-            border: 2px solid #ffffff; /* White border color */
-            padding: 5px;
-            display: inline-block;
-        }
-        .container {
-            padding: 2rem;
-        }
-        .container section {
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .hidden {
-            display: none;
-        }
-        footer {
-            background-color:#1e3c72;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .background {
-            background-image: url(); /* Replace with your background image URL */
-            background-size: cover;
-            background-position: center;
-        }
-        .column img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 1rem;
-        }
-        .gallery-container1 {
-            width: 40%;
-            max-width: 1000px;
-            margin: 0 auto; /* Center the slideshow */
-        }
-        .main-image-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-        }
-        .main-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-        }
-        .arrow.left {
-            left: 10px;
-        }
-        .arrow.right {
-            right: 10px;
-        }
-        .thumbnail-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            gap: 10px;
-        }
-        .thumbnail-container img {
-            width: 100px;
-            height: 70px;
-            object-fit: cover;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: border 0.3s ease;
-        }
-        .thumbnail-container img.active {
-            border: 2px solid #007bff;
-
-        }
-        button:hover {
-            background-color: #1e3c72;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-            border: 1px solid whitesmoke;
-            border-radius: 5px;
-        }       
-        .hidden {
-    display: none;
-}
-       
-     #services-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #2a5298;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            display: none;
-            flex-wrap: wrap; /* Enable wrapping */
-            justify-content: center; /* Center-align rows */
-            padding: 10px;
-            gap: 10px; /* Add space between items */
-        }
-        #services-dropdown a {
-            display: block;
-            flex: 1 1 calc(50% - 20px); /* Allow items to take up 50% width minus the gap */
-            padding: 0.8rem;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            background-color: #2a5298;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        #services-dropdown a:hover {
-            background-color: white;
-            color: #2a5298;
-        }
-        #services-link:hover + #services-dropdown,
-        #services-dropdown:hover {
-            display: flex;
-        }
-        @media (max-width: 600px) {  
-            #services-dropdown  {
-                flex-direction: column; /* Stack items vertically for small screens */
-                gap: 5px; /* Reduce gap */
-            }
-            #services-dropdown a {
-                flex: 1 1 auto; /* Reset width for vertical stacking */
-            }
-        }
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #1e3c72, #2a5298);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: fadeOut 1s ease 2s forwards;
-        }
-
-        #loading-screen img {
-            width: 150px;
-            height: auto;
-            animation: scaleUp 2s ease;
-        }
-
-        #loading-screen h1, #loading-screen p {
-            color: white;
-            margin: 10px 0;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards;
-        }
-
-        #loading-screen h1 {
-            font-size: 2rem;
-            animation-delay: 0.5s;
-        }
-
-        #loading-screen p {
-            font-size: 1.2rem;
-            animation-delay: 1s;
-        }
-
-        @keyframes scaleUp {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        .container2 {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-.content {
-    width: 100%;
-}
-
-.image-container {
-    width: 45%;
-    text-align: center;
-}
-
-.responsive-img {
-    width: 100%;
-    height: fixed;
-    border-radius: 10px;
-}
-
-.center {
-    list-style: none;
-    padding: 0;
-}
-
-.center li {
-    padding: 8px 0;
-    font-size: 1.1em;
-}
-.gallery-container {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically (if the parent has a height) */
-    flex-wrap: wrap;
-    gap: 10px; /* Adjust spacing between images */
-}
-
-.gallery-container img {
-    max-width: 100%; /* Ensures images scale properly */
-    height: auto;
-}
-        </style>
-</head>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("KWFVu114nlNQgPdFV");
-   })();
-</script>
-<script>
-    window.addEventListener('load', () => {
-        const loadingScreen = document.getElementById('loading-screen');
-        const body = document.body;
-
-        // Lock scrolling
-        body.style.overflow = 'hidden';
-
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-
-            // Unlock scrolling
-            body.style.overflow = '';
-        }, 2400); // Matches the fadeOut animation duration
-    });
-</script>
-<body class="background">
-    <div id="loading-screen" style="overflow: hidden; pointer-events: none; position: fixed; width: 100%; height: 100%; z-index: 1000;">
-        <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo">
-        <h1>S-TECH Elektroinštalácie</h1>
-        <p>Urban Selvek</p>
-    </div>
-</body>
-    <header>
-        <img src="https://i.postimg.cc/CKyCB1d0/golden-logo.png" alt="Logo" class="logo" style="height: 120px;">
-        <h1><button onclick="showSection('home');" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer;"><span style="color: gold;">S</span>-TECH Elektroinštalácie</button></h1>
-        <p>Urban Selvek</p>
-    </header>
-    <style>
-        @media (max-width: 600px) {
-            header img.logo {
-                display: none;
-            }
-        }
-    </style>
-    </header>
+    <meta charset="utf-8">
+    <meta name="keywords" content="elektrikár, elektrikárske služby, elektroinštalácie ,elektroinštalácie domov ,elektroinštalácie bytu ,revízie elektrických zariadení ,revízia elektroinštalácie bleskozvody, montáž bleskozvodu ,ochrana pred bleskom, elektroinštalačné práce ,oprava elektroinštalácie, výmena ističov, zapojenie zásuviek a vypínačov,
+elektrické rozvody">
+    <meta name="description" content="Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. ">
+    <title>S-TECH ELEKTROINŠTALÁCIE</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.9.4, nicepage.com">
+    <meta name="referrer" content="origin">
+    <meta property="og:title" content="S-TECH ELEKTROINŠTALÁCIE">
+    <meta property="og:description" content="Komplexné elektroinštalácie pre byty, domy a priemyselné objekty, montáž bleskozvodov, revízie, fotovoltika aj smart home riešenia. Pôsobíme po celom Slovensku – spoľahnite sa na S‑TECH.">
+    <meta property="og:image" content="images/logo.png">
+    <link rel="icon" href="images/favicon.png">
     
-    <nav class="custom-font">
-        <a href="#home" onclick="showSection('home');window.scrollTo(0, 0); return false;">Niečo o nás</a>
-        <a href="#services" id="services-link">Naše Služby</a>
-        <div id="services-dropdown" class="hidden">
-            <a href="#elektroinstalacie" onclick="showSection('elektroinstalacie'); window.scrollTo(0, 0); return false;">Kompletná elektroinštalácia</a>
-            <a href="#zabezpecovacie-zariadenia" onclick="showSection('zabezpecovacie-zariadenia'); window.scrollTo(0, 0); return false;">Zabezpečovacie zariadenia</a>
-            <a href="#fotovoltika" onclick="showSection('fotovoltika'); window.scrollTo(0, 0); return false;">Fotovoltika na kľúč – efektívne a profesionálne riešenie</a>
-            <a href="#inteligentna-domacnost" onclick="showSection('inteligentna-domacnost'); window.scrollTo(0, 0); return false;">Inteligentná domácnosť</a>
-        </div>
-        <a href="#Referencie" onclick="showSection('Referencie');window.scrollTo(0, 0); return false;">Referencie</a>
-        <a href="#contact" onclick="showSection('contact'); return false;">Kontakt</a>
-    </nav>
-    <div id="banner" class="banner" style="position: relative; text-align: center; padding: 0; margin-bottom: 0;">
-        <img src="https://i.postimg.cc/rm0QBMcs/image.png" alt="Banner Image" style="width: 100%; height: auto; object-fit: cover;">
-        <div id="banner-text" style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); text-align: center;">
-            <p style="margin: 0; font-size: 1.5rem;" id="banner-title">S-TECH Elektroinštalácie</p>
-            <p style="margin: 0; font-size: 1rem;" id="banner-phone">Tel: +421 123 456 78</p>
-        </div>
-         <style>
-            @media (min-width: 768px) {
-            #banner-title {
-                font-size: 2.5rem;
-            }
-            #banner-phone {
-                font-size: 1.7rem;
-            }
-            }
-            @media (max-width: 767px) {
-            #banner-text {
-                top: 70%; /* Move banner text lower on mobile */
-            }
-            }
-        </style>
-    </div>
-    </div>
-    <div class="container">
-        <section id="services" class="hidden">
-            <h2>Naše Služby</h2>
-            <p>Špecializujeme sa na kompletné elektroinštalácie, rekonštrukcie a montáže bleskozvodov pre rôzne stavebné objekty, byty a rodinné domy, vrátane vyhotovenia revízií. Naša práca je v súlade s platnými normami, pričom vždy dbáme na vysokú kvalitu.</p>
-            <p>Naša ponuka zahŕňa:</p>
-            <ul class="center">
-                <li>Inštaláciu kamerových systémov</li>
-                <li>Montáž zabezpečovacích zariadení</li>
-                <li>Elektroprípojky</li>
-                <li>Inteligentná domácnosť</li>
-            </ul>
-        </section>
-        <section id="home" class="about-section">
-            <div class="container2">
-            <div class="content">
-                <h2>O nás</h2>
-                    <p>Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.Sme mladý, dynamický tím, ktorý sa neustále vzdeláva a sleduje nové trendy v oblasti elektroinštalácií. Inovácie a moderné technológie sú pre nás štandardom, vďaka čomu si poradíme aj s najnáročnejšími projektmi.</p>
-                </div>   
-            </div>
-        
-            <div class="container2">
-                <h2>Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
-                <p>Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou.
-                 Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
-            </div>
-        
-            <div class="container2 services">
-                <h2>Naša ponuka zahŕňa:</h2>
-                <ul class="center">
-                    <li>✔ Kompletné elektroinštalácie pre byty, domy a priemyselné objekty</li>
-                    <li>✔ Rekonštrukcie a modernizácie starých elektroinštalácií</li>
-                    <li>✔ Inštaláciu kamerových a zabezpečovacích systémov</li>
-                    <li>✔ Realizáciu elektroprípojok – od projektu po montáž</li>
-                    <li>✔ Inteligentné elektroinštalácie a smart home riešenia</li>
-                    <li>✔ Regulačné systémy pre zónové riadenie kúrenia a osvetlenia</li>
-                    <li>✔ Montáž bleskozvodov a uzemnenia</li>
-                    <li>✔ Inštaláciu a servis fotovoltaických systémov</li>
-                    <li>✔ Odborné revízie a certifikácie elektroinštalácií</li>
-                </ul>
-        <div class="image-container" style="text-align: center; display: none;" id="mobile-hidden-slideshow">
-            <img id="slideshow-image" style="width: 100%; height: auto;" src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Elektroinštalácia" class="responsive-img">
-        </div>
-    <script>
-        // Adjust the slideshow visibility and size on mobile
-        function adjustSlideshowVisibilityAndSize() {
-            const slideshow = document.getElementById('mobile-hidden-slideshow');
-            const slideshowImage = document.getElementById('slideshow-image');
-            if (window.innerWidth <= 600) {
-                slideshow.style.display = 'block';
-                slideshow.style.width = '100%';
-                slideshowImage.style.width = '100%';
-                slideshowImage.style.height = 'auto';
-            } else {
-                slideshow.style.display = 'block';
-                slideshow.style.width = '45%';
-                slideshowImage.style.width = '100%';
-                slideshowImage.style.height = 'auto';
-            }
-        }
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "S-TECH ELEKTROINŠTALÁCIE",
+		"logo": "images/logo.png?rand=ae6c"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:type" content="website">
+  <meta name="description" content="Komplexné elektroinštalácie, odborné revízie, montáž bleskozvodov a fotovoltické systémy. Spoľahlivé služby od S-TECH – Poprad a celé Slovensko.">
+<meta name="keywords" content="elektroinštalácie, elektrikár, revízie, bleskozvody, fotovoltika, elektroprípojka, smart home, Poprad, elektrikár Poprad, montáž bleskozvodu, revízia elektriky">
+<meta name="author" content="S-TECH">
 
-        // Run on load and resize
-        window.addEventListener('load', adjustSlideshowVisibilityAndSize);
-        window.addEventListener('resize', adjustSlideshowVisibilityAndSize);
-    </script>
-                </style>
-            </div>     
-            <div class="container2 why-choose-us">
-                <h2>Prečo si vybrať práve nás?</h2>
-                <ul class="center">
-                    <li>✔ Profesionálny prístup a vysoká kvalita služieb</li>
-                    <li>✔ Rýchle a spoľahlivé riešenia šité na mieru</li>
-                    <li>✔ Flexibilita a individuálny prístup ku každému zákazníkovi</li>
-                    <li>✔ Používame len certifikované a overené materiály</li>
-                    <li>✔ Neustále sledujeme technologické trendy a inovácie</li>
-                </ul>
-        
-                <p style="font-size: 1.rem; font-weight: bold; ; padding: 10px; text-align: center;">
-                    Hľadáte spoľahlivé a profesionálne elektroinštalačné riešenie? Neváhajte nás kontaktovať – sme tu pre vás!
-                </p>
-        
-                <!--<div class="image-container">
-                    <img src="images/professional-team.jpg" alt="Tím elektrikárov pri práci" class="responsive-img">
-                </div>  -->
+<!-- Mobilná optimalizácia -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest"><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="S-TECH.html" data-home-page-title="S-TECH" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-stick-footer u-xl-mode" data-lang="sk"><header class="u-box-shadow u-clearfix u-gradient u-header u-sticky u-sticky-c597 u-header" id="header"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <a href="./" data-page-id="53958765" class="u-image u-logo u-image-1" data-image-width="536" data-image-height="649">
+          <img src="images/logo.png?rand=ae6c" class="u-logo-image u-logo-image-1" title="S-TECH">
+        </a>
+        <p class="u-text u-text-body-alt-color u-text-default u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" href="./" data-page-id="53958765" title="S-TECH"><span class="u-text-palette-3-base">S</span>-TECH
+          </a>
+        </p>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation" aria-label="Menu navigation">
+          <div class="menu-collapse" style="font-size: 1.5rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" tabindex="-1" aria-label="Open menu" aria-controls="de99">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="./#sec-05ae" data-page-id="53958765" style="padding: 10px 15px;">KONTAKT</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="REFERENCIE.html" style="padding: 10px 15px;">REFERENCIE</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse" id="de99" role="region" aria-label="Menu panel">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="./#sec-05ae" data-page-id="53958765">KONTAKT</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="REFERENCIE.html">REFERENCIE</a>
+</li></ul>
+              </div>
             </div>
-        </section>
-        <section id="Referencie" class="hidden">
-            <div class="columns" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <!-- Photo Gallery Section -->
-            <div class="gallery-container1" style="width: 100%; max-width: 100%; margin: 0 auto;">
-                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Elektroinštalácia</h3>
-                <div class="main-image-container" style="position: relative; text-align: center;">
-                <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Main Image" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
-                <button class="arrow left" onclick="navigateGallery('.gallery-container1', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
-                <button class="arrow right" onclick="navigateGallery('.gallery-container1', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
-                </div>
-                <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-                <div style="display: flex; gap: 10px; padding: 0 10px; flex-wrap: nowrap;"></div>
-                    <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Thumbnail 1" class="thumbnail active" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
-                    <img src="https://i.postimg.cc/85NBSMZ1/Whats-App-Image-2025-03-12-at-20-18-33.jpg" alt="Thumbnail 2" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: cover;">
-                    <img src="https://i.postimg.cc/bwSRHzGj/elektro-5.jpg" alt="Thumbnail 3" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/YSczdJgL/elektro-4.jpg" alt="Thumbnail 4" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/wT16VP9p/Whats-App-Image-2025-03-12-at-20-18-33-1.jpg" alt="Thumbnail 5" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Thumbnail 6" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg" alt="Thumbnail 7" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/tJXzbWC3/Whats-App-Image-2025-03-12-at-20-18-34.jpg" alt="Thumbnail 8" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/2Sq7CzmK/Whats-App-Image-2025-03-12-at-20-18-32.jpg" alt="Thumbnail 9" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/MKdVZHbX/462543189-927195705505118-2206718227186761131-n.jpg" alt="Thumbnail 10" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/Yq8ttH8Y/image.png" alt="Thumbnail 11" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                    <img src="https://i.postimg.cc/DzGV4kQC/image.png" alt="Thumbnail 12" class="thumbnail" style="height: 70px; width: 100px; flex-shrink: 0; cursor: pointer; object-fit: contain;">
-                </div>
-                </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div><style class="u-sticky-style" data-style-id="c597">.u-sticky-fixed.u-sticky-c597:before, .u-body.u-sticky-fixed .u-sticky-c597:before {
+borders: top right bottom left !important; border-color: #404040 !important; border-width: 2px !important
+}</style></header>
+    <section class="u-clearfix u-gradient u-image lazyload u-section-1" id="sec-dd91" data-bg="linear-gradient(to bottom, rgba(76, 115, 151, 0.5), rgba(0, 23, 85, 0.5)), linear-gradient(to bottom, rgba(0, 23, 85, 1), rgba(0, 23, 85, 1)), url('images/90fc53c9.svg')">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-valign-bottom-md u-valign-bottom-sm u-container-layout-1">
+            <img class="custom-expanded u-hidden-xs u-image u-image-contain u-image-default lazyload u-image-1" alt="" data-image-width="536" data-image-height="649" data-src="images/logo.png?rand=5a64" loading="lazy">
+            <h1 class="u-align-center u-text u-title u-text-1"><span class="u-text-palette-3-base">S</span><span class="u-text-white">-TECH </span>
+            </h1>
+            <p class="u-align-left u-large-text u-text u-text-variant u-text-white u-text-2"> Kompletná elektroinštalácia bez starostí -od návrhu po zapnutie<br>
+            </p>
+            <h5 class="u-align-left u-text u-text-palette-3-base u-text-3">Dynamický tím, čo necháva výsledok hovoriť za seba. </h5>
+            <div class="u-clearfix u-group-elements u-hover-feature u-group-elements-1" data-href="./#sec-3ad6" data-page-id="53958765">
+              <h5 class="u-align-left u-text u-text-body-alt-color u-text-4">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" href="./#sec-3ad6" data-page-id="53958765"> PONUKA&nbsp;<br>SLUŽIEB
+                </a>
+              </h5><span class="u-border-2 u-border-white u-icon u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xlink:href="#svg-49d5"></use></svg><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-49d5" style="enable-background:new 0 0 42 42;"><path d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21s2.224,5,4.941,5H16v11.059
+	C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"></path></svg></span>
             </div>
-
-            <div class="gallery-container2" style="width: 100%; max-width: 100%; margin: 0 auto; margin-top: 50px;"><
-                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8rem; color: #000000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Fotovoltaika, bleskozvod a elektroprípojky</h3>
-                <div class="main-image-container" style="position: relative; text-align: center;">
-                <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Main Image 2" class="mainImage" style="width: auto; max-width: 100%; max-height: 100%; display: block; margin: 0 auto; object-fit: contain;">
-                <button class="arrow left" onclick="navigateGallery('.gallery-container2', -1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8249;</button>
-                <button class="arrow right" onclick="navigateGallery('.gallery-container2', 1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px; cursor: pointer; z-index: 1;">&#8250;</button>
-                </div>
-                <div class="thumbnail-container" style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-                <div style="display: flex; gap: 10px; padding: 0 10px;">
-                    <img src="https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg" alt="Image of a completed project 1" class="thumbnail thumbnail2 active" onclick="navigateGallery('.gallery-container2', 0)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/hvYbmjq6/Whats-App-Image-2025-03-12-at-20-18-27.jpg" alt="Image of a completed project 2" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 1)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/nLQzVhdM/image.png" alt="Image of a completed project 3" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 2)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/XqM32K3g/b1594224-d46b-489b-bf2f-5b9a49437d2c.jpg" alt="Image of a completed project 4" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 3)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/rmNqz05y/Whats-App-Image-2025-03-12-at-20-18-29-1.jpg" alt="Image of a completed project 5" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 4)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/8cWkDKw3/IMG-0741.jpg" alt="Image of a completed project 6" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 5)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/5048XzDn/Whats-App-Image-2025-03-12-at-20-18-30-2.jpg" alt="Image of a completed project 7" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 6)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/x87mp484/Whats-App-Image-2025-03-12-at-20-18-35.jpg" alt="Image of a completed project 8" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 7)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/9Qy911hL/f6364e52-9a5b-4e8d-9bd9-c87aa6b94d71.jpg" alt="Image of a completed project 9" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 8)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/Gtstth3X/image.png" alt="Image of a completed project 10" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 9)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/dtPrCzMh/Whats-App-Image-2025-03-12-at-20-18-32-2.jpg" alt="Image of a completed project 11" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 10)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                    <img src="https://i.postimg.cc/52fz7L21/Whats-App-Image-2025-03-12-at-20-18-32-1.jpg" alt="Image of a completed project 12" class="thumbnail thumbnail2" onclick="navigateGallery('.gallery-container2', 11)" style="height: 70px; width: auto; max-width: 100px; object-fit: contain;">
-                </div>
-                </div>
+            <div class="u-clearfix u-group-elements u-hover-feature u-group-elements-2" data-href="REFERENCIE.html" data-page-id="1770919238" title="About">
+              <h5 class="u-align-left u-text u-text-body-alt-color u-text-5">UKÁŽKY PRÁC</h5><span class="u-border-2 u-border-white u-icon u-text-white u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xlink:href="#svg-de9b"></use></svg><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-de9b" style="enable-background:new 0 0 42 42;"><path d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21s2.224,5,4.941,5H16v11.059
+	C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"></path></svg></span>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+    <section class="u-clearfix u-white u-section-2" id="sec-3ad6">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h2 class="u-align-center u-text u-text-1"> Naša ponuka zahŕňa</h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-1" data-href="./#block-1" data-page-id="53958765">
+              <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-file-icon u-icon u-text-palette-1-base u-icon-1"><img src="images/icon_0_01.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-2">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href=""> Kompletné elektroinštalácie pre byty, domy a priemyselné objekty</a>
+                </h5>
+              </div>
             </div>
-        </section>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-2">
+              <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-file-icon u-icon u-icon-2"><img src="images/icon_0_1.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-3"> Rekonštrukcie a modernizácie starých elektroinštalácií</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-3">
+              <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-3"><img src="images/icon_0_2.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-4"> &nbsp;Inštaláciu kamerových a zabezpečovacích systémov</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-4">
+              <div class="u-container-layout u-similar-container u-container-layout-4"><span class="u-file-icon u-icon u-icon-4"><img src="images/Nepomenovan.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-5"> &nbsp;Realizáciu elektroprípojok – od projektu po montáž</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-5">
+              <div class="u-container-layout u-similar-container u-container-layout-5"><span class="u-file-icon u-icon u-icon-5"><img src="images/icon_1_0.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-6"> &nbsp;Inteligentné elektroinštalácie a smart home riešenia</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-6">
+              <div class="u-container-layout u-similar-container u-container-layout-6"><span class="u-file-icon u-icon u-icon-6"><img src="images/icon_1_1.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-7"> Regulačné systémy pre zónové riadenie kúrenia a osvetlenia</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-7">
+              <div class="u-container-layout u-similar-container u-container-layout-7"><span class="u-file-icon u-icon u-icon-7"><img src="images/Nepomenovan1.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-8"> Montáž bleskozvodov a uzemnenia</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-8">
+              <div class="u-container-layout u-similar-container u-container-layout-8"><span class="u-file-icon u-icon u-icon-8"><img src="images/icon_2_1.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-9"> Inštaláciu a servis fotovoltaických systémov</h5>
+              </div>
+            </div>
+            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-9">
+              <div class="u-container-layout u-similar-container u-container-layout-9"><span class="u-file-icon u-icon u-icon-9"><img src="images/icon_2_2.png" alt=""></span>
+                <h5 class="u-text u-text-default u-text-10"> Odborné revízie a certifikácie elektroinštalácií</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </section>
+    <section class="u-clearfix u-gradient u-section-3" id="block-3">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h2 class="u-align-center u-text u-text-white u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
+        <p class="u-align-center u-large-text u-text u-text-body-alt-color u-text-default u-text-variant u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou. Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-fb9e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-align-left-xl u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
+                  <h2 class="u-align-left u-text u-text-custom-color-1 u-text-default u-text-1">
+                    <a href="https://www.stech.sk/#home" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1">Niečo o nás</a>
+                  </h2>
+                  <p class="u-align-left u-text u-text-2"> Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.Sme mladý, dynamický tím, ktorý sa neustále vzdeláva a sleduje nové trendy v oblasti elektroinštalácií. Inovácie a moderné technológie sú pre nás štandardom, vďaka čomu si poradíme aj s najnáročnejšími projektmi.</p>
+                  <a href="#" class="u-btn u-button-style u-custom-color-1 u-hidden-lg u-hidden-xl u-hidden-xs u-btn-2">Button</a>
+                </div>
+              </div>
+              <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2" src="">
+                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2" src="">
+                  <img class="custom-expanded u-image lazyload u-image-1" data-image-width="1080" data-image-height="1080" data-src="images/90fc53c9.svg" loading="lazy">
+                  <div class="custom-expanded u-carousel u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-a6af">
+                    <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="3" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="4" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="5" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="6" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="7" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-a6af" data-u-slide-to="8" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                    </ol>
+                    <div class="u-carousel-inner u-gallery-inner u-gallery-inner-1" role="listbox">
+                      <div class="u-active u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-1">
+                        <div class="u-back-slide" data-image-width="1600" data-image-height="1200">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/Elektro1.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-1">
+                          <h3 class="u-gallery-heading">Sample Title</h3>
+                          <p class="u-gallery-text">Sample Text</p>
+                        </div>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-2">
+                        <div class="u-back-slide" data-image-width="1600" data-image-height="1200">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/elektro5.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-2">
+                          <h3 class="u-gallery-heading">Sample Title</h3>
+                          <p class="u-gallery-text">Sample Text</p>
+                        </div>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-3" data-image-width="1600" data-image-height="1200">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.31.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-3"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-4" data-image-width="1200" data-image-height="1600">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload u-back-image-4" data-src="images/Elektro6.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-4"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-5" data-image-width="1200" data-image-height="1600">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.34.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-5"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-6" data-image-width="1240" data-image-height="930">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/IMG_0972.jpg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-6"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-7" data-image-width="1200" data-image-height="1600">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.25.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-7"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-8" data-image-width="1200" data-image-height="1600">
+                        <div class="u-back-slide">
+                          <img class="u-back-image u-expanded lazyload u-back-image-8" data-src="images/WhatsAppImage2025-03-12at20.18.302.jpeg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-8"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-9" data-image-width="1200" data-image-height="1600">
+                        <div class="u-back-slide" data-image-width="697" data-image-height="930">
+                          <img class="u-back-image u-expanded lazyload u-back-image-9" data-src="images/IMG_0741.jpg" loading="lazy">
+                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-9"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
+                      </div>
                     </div>
+                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-a6af" role="button" data-u-slide="prev"><span aria-hidden="true">
+                        <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span><span class="sr-only">
+                        <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span>
+                    </a>
+                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-a6af" role="button" data-u-slide="next"><span aria-hidden="true">
+                        <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span><span class="sr-only">
+                        <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span>
+                    </a>
+                  </div>
                 </div>
-                </div>
-                </div>
-        </section>
-        <section id="contact" class="hidden">
-            <h2>Kontakt</h2>
-            <p>Kontaktujte nás na emailovej adrese: uselvek@gmail.com alebo telefonicky na čísle: +421 907 419 466. V prípade nedostupnosti sa obráťte na číslo: +421 951 036 186.</h1>
-            <form action="" method="post" onsubmit="sendMail(); return false;">
-                <label for="name">Meno:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-        
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-        
-                <label for="message">Správa:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
-        
-                <button type="submit">Send Message</button>
-            </section>
-            <section id="elektroinstalacie" class="hidden" style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease;">
-                <h2 style="text-align:left;">Kompletné elektroinštalácie – spoľahlivosť a kvalita</h2>
-        </section>
-        <section id="elektroinstalacie" class="hidden">
-            <h2 style="text-align:left;">Kompletné elektroinštalácie – spoľahlivosť a kvalita</h2>
-            <p>Naša spoločnosť sa špecializuje na elektroinštalačné práce všetkého druhu. Od nových inštalácií až po rekonštrukcie starších rozvodov – vždy dbáme na odbornosť, bezpečnosť a precíznosť.</p>
-            <p>Naše služby zahŕňajú:</p>
-            <ul>
-                <li>💡 Kompletné elektroinštalácie – pre nové aj rekonštruované objekty</li>
-                <li>⚡ Montáž a údržbu bleskozvodov – ochrana pred bleskami a prepäťovými špičkami</li>
-                <li>🔍 Revízie a kontroly elektroinštalácií – pre bezpečnú a bezproblémovú prevádzku</li>
-                <li>📐 Návrh a optimalizáciu elektroinštalácií – odborné poradenstvo na mieru</li>
-            </ul>
-            <p>Moderné riešenia, na ktoré sa môžete spoľahnúť</p>
-            <p>Pracujeme s najnovšími technológiami a normami, aby sme vám zabezpečili maximálnu kvalitu a spoľahlivosť. Neustále sa vzdelávame a sledujeme nové trendy v oblasti elektroinštalácií.</p>
-            <p>Nech už ide o byt, dom, priemyselný objekt alebo kancelárie, vždy nájdeme najlepšie riešenie pre vaše potreby.</p>
-            <div class="gallery" style="display: flex; justify-content: center; padding: 20px; overflow-x: auto; gap: 10px; flex-wrap: wrap;">
-                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
-                    <img src="https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg" alt="Picture 1" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: auto; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
-                    <img src="https://i.postimg.cc/sDXmxPsx/ee7069be-b6b1-45fc-944c-b1a43539ab24.jpg" alt="Picture 2" style="width: 100%; height: auto; object-fit: cover;">
-                </div>
+              </div>
             </div>
-            <style>
-                @media (max-width: 600px) {
-                    .gallery {
-                        flex-direction: column;
-                        gap: 20px;
-                    }
-                    .frame {
-                        width: 100%;
-                        max-width: none;
-                    }
-                }
-                @media (min-width: 601px) {
-                    .gallery {
-                        flex-direction: row;
-                        gap: 10px;
-                    }
-                    .frame {
-                        width: 300px;
-                        max-width: 300px;
-                    }
-                }
-            </style>
-            </div>
-            </div>
-        </section>
-        <section id="kamerove-systemy" class="hidden">
-            <h2>Kamerové systémy</h2>
-            <p style="text-align: justify; margin-top: 1rem;">Ponúkame profesionálnu inštaláciu kamerových systémov pre zvýšenie bezpečnosti vašich objektov. Naše riešenia zahŕňajú návrh, montáž a údržbu kamerových systémov, ktoré sú prispôsobené vašim konkrétnym potrebám.</p>
-            <p style="text-align: justify;">Naše služby zahŕňajú:</p>
-            <ul style="text-align: justify; margin-top: 1rem;">
-                <li>Návrh a plánovanie kamerových systémov</li>
-                <li>Inštaláciu a konfiguráciu kamier</li>
-                <li>Údržbu a servis kamerových systémov</li>
-                <li>Integráciu s existujúcimi bezpečnostnými systémami</li>
-            </ul>
-            
-        </section>
-        <section id="zabezpecovacie-zariadenia" class="hidden">
-            <h2>Zabezpečovacie zariadenia – maximálna ochrana vášho majetku</h2>
-            <p>Špecializujeme sa na inštaláciu moderných zabezpečovacích zariadení, ktoré účinne chránia váš domov, firmu či iné objekty pred neoprávneným vstupom. Naše systémy kombinujú najnovšie technológie so spoľahlivosťou, aby ste mali vždy istotu bezpečia.</p>
-            <p>Naše zabezpečovacie riešenia zahŕňajú:</p>
-            <ul>
-                <li>✔ Inštaláciu alarmových systémov – spoľahlivá detekcia neoprávneného vstupu</li>
-                <li>✔ Montáž senzorov pohybu a dverových senzorov – okamžitá reakcia na akýkoľvek pohyb či otvorenie dverí</li>
-                <li>✔ Integráciu s kamerovými systémami – prehľad o dianí vo vašom objekte v reálnom čase</li>
-                <li>✔ Napojenie na mobilnú aplikáciu – vzdialené ovládanie a monitoring bezpečnostného systému</li>
-                <li>✔ Pravidelnú údržbu a kontrolu zabezpečovacích zariadení – dlhodobá spoľahlivosť a funkčnosť</li>
-            </ul>
-            <p>Pracujeme s overenými značkami a systémami, ktoré zaručujú vysoký štandard ochrany. Či už potrebujete základné zabezpečenie domácnosti alebo komplexný systém pre firemné priestory, nájdeme pre vás optimálne riešenie.</p>
-            
-        </section>
-        <section id="fotovoltika" class="hidden">
-            <h2>Fotovoltika na kľúč – efektívne a profesionálne riešenie</h2>
-            <p>Špecializujeme sa na kompletnú montáž fotovoltických systémov, od návrhu až po finálne zapojenie a spustenie. Pomáhame vám šetriť energiu a znížiť náklady na elektrinu vďaka spoľahlivým a výkonným solárnym riešeniam.</p>
-            <p>Naša ponuka fotovoltických systémov zahŕňa:</p>
-            <ul>
-                <li>✔ Montáž nosných konštrukcií – pre šikmé aj ploché strechy, prípadne voľne stojace systémy</li>
-                <li>✔ Inštaláciu solárnych panelov – výber kvalitných panelov s vysokou účinnosťou</li>
-                <li>✔ Osadenie a zapojenie meničov (invertorov) – máme školenie na SolaX a Huawei, ale vieme pracovať aj s inými značkami</li>
-                <li>✔ Kompletné elektroinštalačné práce – káblovanie, rozvádzače a ochranné prvky pre bezpečnú prevádzku</li>
-                <li>✔ Napojenie a konfiguráciu systému – nastavenie výkonu, monitoring a prepojenie so sieťou</li>
-            </ul>
-            <p>Sme mladý a dynamický kolektív, ktorý sa neustále vzdeláva a inovuje, aby vám priniesol tie najlepšie technológie v oblasti obnoviteľných zdrojov energie. Či už potrebujete fotovoltiku pre domácnosť, firmu alebo priemyselný objekt, vieme vám zabezpečiť riešenie na mieru.</p>
-            <p>☀ Využite silu slnka naplno – kontaktujte nás a my sa o všetko postaráme!</p>
-            <div class="gallery" style="display: flex; justify-content: center; gap: 20px; padding: 40px; overflow-x: auto;">
-                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
-                    <img src="https://i.postimg.cc/8cWkDKw3/IMG-0741.jpg" alt="Picture 1" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="frame" style="border: 5px solid black; padding: 0; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; overflow: hidden;">
-                    <img src="https://i.postimg.cc/rmNqz05y/Whats-App-Image-2025-03-12-at-20-18-29-1.jpg" alt="Picture 2" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-        </section>
-        <section id="inteligentna-domacnost" class="hidden">
-            <h2>Inteligentná domácnosť</h2>
-            <p>Inteligentné domácnosti – pohodlie a efektivita na dosah ruky</p>
-            <p>Vytvárame inteligentné domácnosti, ktoré vám umožnia ovládať osvetlenie, kúrenie, bezpečnostné systémy a ďalšie zariadenia pohodlne cez smartfón alebo tablet. Naše riešenia prinášajú vyšší komfort, bezpečnosť a úsporu energie, čím zefektívňujú každodenný život.</p>
-            <p>Naše inteligentné riešenia zahŕňajú:</p>
-            <ul>
-                <li>✔ Ovládanie osvetlenia a kúrenia – nastavte si ideálne podmienky pre váš domov na diaľku</li>
-                <li>✔ Zónovú reguláciu kúrenia – presná kontrola teploty v jednotlivých miestnostiach pre maximálny komfort a úsporu</li>
-                <li>✔ Integráciu bezpečnostných systémov – alarmy, kamerové systémy a prístupové systémy pre maximálnu ochranu</li>
-                <li>✔ Automatizáciu domácich spotrebičov – ovládanie roliet, brán, ventilácie a ďalších zariadení</li>
-                <li>✔ Energeticky úsporné riešenia – optimalizácia spotreby elektrickej energie pre nižšie náklady</li>
-            </ul>
-            <p>Špecializujeme sa najmä na inteligentné systémy Siemens a Loxone, no vieme pracovať aj s inými značkami a prispôsobiť riešenie vašim individuálnym potrebám.</p>
-            <p>Sme profesionáli v oblasti inteligentných domácností a neustále sledujeme najnovšie trendy v automatizácii a smart technológiách. Naše riešenia sú spoľahlivé, moderné a šité na mieru.</p>
-        </section>
+          </div>
         </div>
-        <footer id="page-footer" style="background-color: #1e3c72; color: white; text-align: center; padding: 1rem; position: fixed; bottom: -100px; width: 100%; transition: bottom 0.3s ease; visibility: hidden;">
-            <p onclick="alert('Email:jozef.neupauer123@gmail.com\nPhone: +421 951 036 186');" style="cursor: pointer;">&copy; 2025 S-TECH Elektroinštalácie. Designed by Jozef Neupauer</p>
-        </footer>
-        <script>
-            window.addEventListener('scroll', () => {
-            const footer = document.getElementById('page-footer');
-            const scrollPosition = window.scrollY + window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-
-            if (scrollPosition >= documentHeight) {
-                footer.style.visibility = 'visible';
-                footer.style.bottom = '0';
-            } else {
-                footer.style.visibility = 'hidden';
-                footer.style.bottom = '-100px';
-            }
-            });
-        </script>
-        <script>
-            window.addEventListener('scroll', () => {
-            const footer = document.getElementById('page-footer');
-            const scrollPosition = window.scrollY + window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-
-            if (scrollPosition >= documentHeight) {
-                footer.style.bottom = '0';
-            } else {
-                footer.style.bottom = '-100px';
-            }
-            });
-        </script>
-<script>
+      </div>
+    </section>
+    <section class="u-clearfix u-hidden u-section-5" id="block-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h5 class="u-hidden-lg u-hidden-md u-hidden-xl u-hidden-xs u-text u-text-default u-text-1">test</h5>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-gradient u-section-6" id="sec-05ae">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <h2 class="u-text u-text-white u-text-1">KONTAKT</h2>
+                      <p class="u-text u-text-2"><span class="u-text-white">V prípade akýchkoľvek otázok nás neváhajte kontaktovať na mobilnom čísle&nbsp;+421 907 419 466&nbsp;alebo písomne na emaile:</span>
+                        <br><span class="u-text-body-alt-color">uselvek@gmail.com </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-2">
+                    <div class="u-container-layout u-container-layout-2">
+                      <div class="u-form u-form-1">
+                        <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form-5">
+                          <div class="u-form-group u-form-name u-label-none">
+                            <label class="u-label">Name</label>
+                            <input type="text" placeholder="Meno" id="name-5359" name="name" class="u-input u-input-rectangle" required="">
+                          </div>
+                          <div class="u-form-email u-form-group u-label-none">
+                            <label class="u-label">Email</label>
+                            <input type="email" placeholder="Email" id="email-5359" name="email" class="u-input u-input-rectangle" required="">
+                          </div>
+                          <div class="u-form-group u-form-message u-label-none">
+                            <label class="u-label">Address</label>
+                            <textarea placeholder="Správa" id="message-5359" name="message" class="u-input u-input-rectangle" required=""></textarea>
+                          </div>
+                          <div class="u-form-group u-form-submit">
+                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-white u-btn-1">Odoslať</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                          </div>
+                          <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+                          <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
+                          <input type="hidden" value="" name="recaptchaResponse">
+                          <input type="hidden" name="formServices" value="895fcbe5-ce9d-792f-a04d-2b6db097d6aa">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
     
-</script>
-    <script>
-        
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            if (slides[slideIndex - 1]) {
-                slides[slideIndex - 1].style.display = "block";
-            }
-            if (dots[slideIndex - 1]) {
-                dots[slideIndex - 1].className += " active";
-            }
-        }
-    </script>
-    <script>
-        const mainImage = document.getElementById('mainImage');
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const leftArrow = document.querySelector('.arrow.left');
-        const rightArrow = document.querySelector('.arrow.right');
-        let currentIndex = 0;
-
-        function updateMainImage(index) {
-            mainImage.src = thumbnails[index].src;
-            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
-            thumbnails[index].classList.add('active');
-        }
-
-        // Thumbnail click event
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener('click', () => {
-                currentIndex = index;
-                updateMainImage(currentIndex);
-            });
-        });
-
-        // Arrow navigation
-        leftArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-            updateMainImage(currentIndex);
-        });
-
-        rightArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % thumbnails.length;
-            updateMainImage(currentIndex);
-        });
-    </script>
-    <script>
-        // Function to show the banner when the "Services" section is active
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            const banner = document.getElementById('banner');
-
-            sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.add('hidden');
-                }
-            });
-
-            // Show the banner only for the "services" section
-            if (sectionId === 'home') {
-                banner.style.display = 'block';
-            } else {
-                banner.style.display = 'none';
-            }
-        }
-    </script>
-    <script>
-        const servicesLink = document.getElementById('services-link');
-        const servicesDropdown = document.getElementById('services-dropdown');
-        
-        function isMobile() {
-            return window.innerWidth <= 600;
-        }
-
-        function toggleDropdown() {
-            const isVisible = servicesDropdown.style.display === 'block';
-            servicesDropdown.style.display = isVisible ? 'none' : 'block';
-        }
-
-        servicesLink.addEventListener('click', (e) => {
-            if (isMobile()) {
-                e.preventDefault(); // Prevent the default anchor behavior
-                toggleDropdown();
-            }
-        });
-
-        servicesLink.addEventListener('mouseenter', () => {
-            if (!isMobile()) {
-                servicesDropdown.style.display = 'block';
-                servicesDropdown.style.opacity = '1';
-                servicesDropdown.style.transform = 'translateY(0)';
-            }
-        });
-
-        servicesLink.addEventListener('mouseleave', () => {
-            if (!isMobile()) {
-                setTimeout(() => {
-                    if (!servicesDropdown.matches(':hover')) {
-                        servicesDropdown.style.display = 'none';
-                    }
-                }, 300); // Match the CSS transition duration
-            }
-        });
-
-        servicesDropdown.addEventListener('mouseleave', () => {
-            if (!isMobile()) {
-                servicesDropdown.style.opacity = '0';
-                servicesDropdown.style.transform = 'translateY(-10px)';
-                setTimeout(() => {
-                    servicesDropdown.style.display = 'none';
-                }, 300); // Match the CSS transition duration
-            }
-        });
-
-        // Hide dropdown when clicking anywhere outside of it
-        document.addEventListener('click', (e) => {
-            if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
-                servicesDropdown.style.display = 'none';
-            }
-        });
-
-        // Hide dropdown when clicking on any link inside it
-        const serviceLinks = servicesDropdown.querySelectorAll('a');
-        serviceLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                servicesDropdown.style.display = 'none';
-            });
-        });
-
-        async function sendMail() {
-            const nameElement = document.getElementById("name");
-            const emailElement = document.getElementById("email");
-            const messageElement = document.getElementById("message");
-
-            const serviceID = 'service_mtshyuo'; // Replace with your actual service ID
-            const templateID = 'template_10uu21i';
-            var params = {
-                name: nameElement ? nameElement.value : "",
-                email: emailElement ? emailElement.value : "",
-                message: messageElement ? messageElement.value : ""
-            };
-
-            console.log("Sending email with params:", params);
-
-            try {
-                await emailjs.send(serviceID, templateID, params);
-                if (nameElement) nameElement.value = "";
-                if (emailElement) emailElement.value = "";
-                if (messageElement) messageElement.value = "";
-                alert("Your message has been sent successfully!");
-            } catch (err) {
-                console.error("Failed to send email:", err);
-                alert("Failed to send message. Please try again later.");
-            }
-        }
-    </script>
-    <script>
     
-    function addThumbnailClicks(galleryQuery) {
-        const thumbnails = document.querySelectorAll(galleryQuery + ' .thumbnail');
-        const mainImage = document.querySelector(galleryQuery + ' .mainImage');
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener('click', () => {
-                thumbnails.forEach(thumb => thumb.classList.remove('active'));
-                mainImage.src = thumbnails[index].src;
-                thumbnails[index].classList.add('active');
-            });
-        });
-    }
-    
-    addThumbnailClicks(".gallery-container1")
-    addThumbnailClicks(".gallery-container2")
-    
-    function navigateGallery(galleryQuery, direction) {
-        const thumbnails = document.querySelectorAll(galleryQuery + ' .thumbnail');
-        const mainImage = document.querySelector(galleryQuery + ' .mainImage');
-        let currentIndex = Array.from(thumbnails).findIndex(thumb => thumb.classList.contains('active'));
-
-        currentIndex = (currentIndex + direction + thumbnails.length) % thumbnails.length;
-
-        mainImage.src = thumbnails[currentIndex].src;
-        thumbnails.forEach(thumb => thumb.classList.remove('active'));
-        thumbnails[currentIndex].classList.add('active');
-    }
-
-    
-    </script>
-     <script>
-        const images = [
-            "https://i.postimg.cc/Kv40YXyC/IMG-0972.jpg",
-            "https://i.postimg.cc/fLC7TyPY/Elektro-1.jpg",
-            "https://i.postimg.cc/Gtstth3X/image.png",
-            "https://i.postimg.cc/k5Bz3rhJ/Whats-App-Image-2025-03-12-at-20-18-31.jpg",
-        ];
-        let currentImageIndex = 0;
-
-        function changeImage() {
-            const slideshowImage = document.getElementById("slideshow-image");
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            slideshowImage.src = images[currentImageIndex];
-        }
-
-        setInterval(changeImage, 5000); // Change image every 5 seconds
-    </script>
-<!-- filepath: /C:/Users/jozef/Desktop/send_mail.php -->
-<script>
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Phone number copied: ' + text);
-        }).catch(err => {
-            console.error('Failed to copy text: ', err);
-        });
-    }
-</script>
-</body>
-</html>
+    <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-top-xs u-sheet-1">
+        <h3 class="u-headline u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
+          <a href="/"><span class="u-text-palette-3-base">S</span>-TECH
+          </a>
+        </h3>
+        <p class="u-text u-text-default u-text-2"> © 2025 S-TECH Elektroinštalácie.</p>
+        <p class="u-text u-text-3">KONTAKT-​ uselvek@gmail.com|​+421 907 419 466</p>
+      </div></footer>
+  
+</body></html>

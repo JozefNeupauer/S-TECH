@@ -10,7 +10,7 @@ elektrické rozvody">
 <link rel="stylesheet" href="index.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 7.9.4, nicepage.com">
+    <meta name="generator" content="Nicepage 7.10.10, nicepage.com">
     <meta name="referrer" content="origin">
     <meta property="og:title" content="S-TECH ELEKTROINŠTALÁCIE">
     <meta property="og:description" content="Komplexné elektroinštalácie pre byty, domy a priemyselné objekty, montáž bleskozvodov, revízie, fotovoltika aj smart home riešenia. Pôsobíme po celom Slovensku – spoľahnite sa na S‑TECH.">
@@ -24,7 +24,7 @@ elektrické rozvody">
     
     
     
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -42,7 +42,101 @@ elektrické rozvody">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest"><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<link rel="manifest" href="/site.webmanifest"><meta name="referrer" content="origin"><script>
+    function gdprConfirmed() {
+        return true;
+    }
+    function dynamicLoadScript() {
+        var script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6LeoE3srAAAAANaa-4y4dOcA8o_gwJN3inl_m_Lr';
+        script.async = true;
+        document.body.appendChild(script);
+        script.onload = function() {
+            let event = new CustomEvent("recaptchaLoaded");
+            document.dispatchEvent(event);
+        };
+    }
+    function showRecaptchaError(error) {
+        error = error || '';
+        var formError = document.querySelector('.u-form-send-error');
+
+        if (formError) {
+            formError.innerText = 'Site Owner Error: ' + error.replace(/:[\s\S]*/, '');
+            formError.style.display = 'block';
+        }
+
+        console.error('Error in grecaptcha: ', error);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var confirmButton = document.querySelector('.u-cookies-consent .u-button-confirm');
+        if (confirmButton) {
+            confirmButton.onclick = dynamicLoadScript;
+        }
+    });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            if (!gdprConfirmed()) {
+                return;
+            }
+            dynamicLoadScript();
+        });
+    </script>
+    <script>
+        document.addEventListener("recaptchaLoaded", function() {
+            if (!gdprConfirmed()) {
+                return;
+            }
+
+            (function (grecaptcha, sitekey, actions) {
+                var recaptcha = {
+                    execute: function (action, submitFormCb) {
+                        if (typeof grecaptcha === 'undefined' || typeof grecaptcha.execute !== 'function') {
+                            showRecaptchaError('reCAPTCHA script failed to load.');
+                            return;
+                        }
+
+                        grecaptcha.execute(sitekey, {action: action}).then((token) => {
+                            if (!token) {
+                                throw new Error('Empty token received from reCAPTCHA');
+                            }
+
+                            var forms = document.getElementsByTagName('form');
+
+                            for (var i = 0; i < forms.length; i++) {
+                                var response = forms[i].querySelector('[name="recaptchaResponse"]');
+
+                                if (!response) {
+                                    response = document.createElement('input');
+                                    response.setAttribute('type', 'hidden');
+                                    response.setAttribute('name', 'recaptchaResponse');
+                                    forms[i].appendChild(response);
+                                }
+
+                                response.value = token;
+                            }
+
+                            submitFormCb();
+                        }).catch((e) => {
+                            showRecaptchaError(e.message);
+                        });
+                    },
+
+                    executeContact: function (submitFormCb) {
+                        recaptcha.execute(actions['contact'], submitFormCb);
+                    }
+                };
+
+                window.recaptchaObject = recaptcha;
+            })(
+                grecaptcha,
+                
+                '6LeoE3srAAAAANaa-4y4dOcA8o_gwJN3inl_m_Lr',
+                {'contact': 'contact'}
+            );
+        });
+    </script>
+<meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-home-page="S-TECH.html" data-home-page-title="S-TECH" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-stick-footer u-xl-mode" data-lang="sk"><header class="u-box-shadow u-clearfix u-gradient u-header u-sticky u-sticky-c597 u-header" id="header"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
         <a href="./" data-page-id="53958765" class="u-image u-logo u-image-1" data-image-width="536" data-image-height="649">
           <img src="images/logo.png?rand=ae6c" class="u-logo-image u-logo-image-1" title="S-TECH">
@@ -60,8 +154,8 @@ elektrické rozvody">
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="./#sec-05ae" data-page-id="53958765" style="padding: 10px 15px;">KONTAKT</a>
-</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="REFERENCIE.html" style="padding: 10px 15px;">REFERENCIE</a>
+            <ul class="u-nav u-unstyled u-nav-1" role="menubar"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-white" href="./#sec-05ae" data-page-id="53958765" style="padding: 10px 15px;">KONTAKT</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-white" href="REFERENCIE.html" style="padding: 10px 15px;">REFERENCIE</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse" id="de99" role="region" aria-label="Menu panel">
@@ -77,9 +171,9 @@ elektrické rozvody">
           </div>
         </nav>
       </div><style class="u-sticky-style" data-style-id="c597">.u-sticky-fixed.u-sticky-c597:before, .u-body.u-sticky-fixed .u-sticky-c597:before {
-borders: top right bottom left !important; border-color: #404040 !important; border-width: 2px !important
+borders: top right bottom left !important
 }</style></header>
-    <section class="u-clearfix u-gradient u-image lazyload u-section-1" id="sec-dd91" data-bg="linear-gradient(to bottom, rgba(76, 115, 151, 0.5), rgba(0, 23, 85, 0.5)), linear-gradient(to bottom, rgba(0, 23, 85, 1), rgba(0, 23, 85, 1)), url('images/90fc53c9.svg')">
+    <section class="u-clearfix u-gradient u-image lazyload u-section-1" id="sec-dd91" data-bg="linear-gradient(to bottom, rgba(76, 115, 151, 0.5), rgba(0, 23, 85, 0.5)), linear-gradient(to bottom, rgba(0, 23, 85, 1), rgba(0, 23, 85, 1)), url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K')">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-valign-bottom-md u-valign-bottom-sm u-container-layout-1">
@@ -111,49 +205,49 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
         <h2 class="u-align-center u-text u-text-1"> Naša ponuka zahŕňa</h2>
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-1" data-href="./#block-1" data-page-id="53958765">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-1">
               <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-file-icon u-icon u-text-palette-1-base u-icon-1"><img src="images/icon_0_01.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-2">
                   <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href=""> Kompletné elektroinštalácie pre byty, domy a priemyselné objekty</a>
                 </h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-2">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-2">
               <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-file-icon u-icon u-icon-2"><img src="images/icon_0_1.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-3"> Rekonštrukcie a modernizácie starých elektroinštalácií</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-3">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-3">
               <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-3"><img src="images/icon_0_2.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-4"> &nbsp;Inštaláciu kamerových a zabezpečovacích systémov</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-4">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-4">
               <div class="u-container-layout u-similar-container u-container-layout-4"><span class="u-file-icon u-icon u-icon-4"><img src="images/Nepomenovan.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-5"> &nbsp;Realizáciu elektroprípojok – od projektu po montáž</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-5">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-5">
               <div class="u-container-layout u-similar-container u-container-layout-5"><span class="u-file-icon u-icon u-icon-5"><img src="images/icon_1_0.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-6"> &nbsp;Inteligentné elektroinštalácie a smart home riešenia</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-6">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-6">
               <div class="u-container-layout u-similar-container u-container-layout-6"><span class="u-file-icon u-icon u-icon-6"><img src="images/icon_1_1.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-7"> Regulačné systémy pre zónové riadenie kúrenia a osvetlenia</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-7">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-7">
               <div class="u-container-layout u-similar-container u-container-layout-7"><span class="u-file-icon u-icon u-icon-7"><img src="images/Nepomenovan1.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-8"> Montáž bleskozvodov a uzemnenia</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-8">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-8">
               <div class="u-container-layout u-similar-container u-container-layout-8"><span class="u-file-icon u-icon u-icon-8"><img src="images/icon_2_1.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-9"> Inštaláciu a servis fotovoltaických systémov</h5>
               </div>
             </div>
-            <div class="u-align-center u-container-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-9">
+            <div class="u-align-center u-container-style u-gradient u-hover-feature u-list-item u-repeater-item u-list-item-9">
               <div class="u-container-layout u-similar-container u-container-layout-9"><span class="u-file-icon u-icon u-icon-9"><img src="images/icon_2_2.png" alt=""></span>
                 <h5 class="u-text u-text-default u-text-10"> Odborné revízie a certifikácie elektroinštalácií</h5>
               </div>
@@ -171,14 +265,41 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
       
       
     </section>
-    <section class="u-clearfix u-gradient u-section-3" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-white u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
-        <p class="u-align-center u-large-text u-text u-text-body-alt-color u-text-default u-text-variant u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> Od prvotného návrhu až po finálne odovzdanie systému – postaráme sa o všetky elektroinštalačné práce. Či už ide o novostavby, rekonštrukcie, priemyselné priestory alebo moderné smart home riešenia, vždy pristupujeme k projektu s maximálnou precíznosťou a profesionalitou. Naša práca je postavená na inováciách, kvalite a individuálnom prístupe ku každému klientovi. Neustále sledujeme nové technológie, aby sme mohli ponúknuť moderné a efektívne riešenia.</p>
+    <section class="u-align-center u-clearfix u-color-scheme-custom-color-scheme-1 u-color-var u-section-3" id="block-4">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <h2 class="u-text u-text-body-alt-color u-text-default u-text-1"> Elektroinštalácie na kľúč – všetko pod jednou strechou</h2>
+        <p class="u-align-justify-lg u-align-justify-md u-align-justify-sm u-align-justify-xl u-align-left-xs u-large-text u-text u-text-body-alt-color u-text-default u-text-variant u-text-2">Od prvého návrhu až po odovzdanie hotového systému – všetko vybavíme za vás. Zabezpečujeme elektroinštalácie pre novostavby, rekonštrukcie, priemyselné objekty aj moderné smart home riešenia. Ku každému projektu pristupujeme zodpovedne a s dôrazom na kvalitu.
+Sme tím, ktorý sleduje nové technológie a trendy, aby sme vám mohli ponúknuť spoľahlivé a funkčné riešenia na mieru. Veríme, že najlepšie výsledky prináša kombinácia odbornosti, ľudského prístupu a dobrého nápadu. </p>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-border-2 u-border-white u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1"><span class="u-align-center u-custom-item u-file-icon u-icon u-icon-1"><img src="images/1Tak1.PNG" alt=""></span>
+                <h3 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="2250" data-animation-delay="0">+50</h3>
+                <h5 class="u-align-center u-custom-item u-text u-text-body-alt-color u-text-4">Zrealizované stavby <br><span style="font-weight: 400;">Počet dokončených elektrotechnických projektov (rodinné domy, priemyselné objekty, atď.)</span>
+                  <br>
+                </h5>
+              </div>
+            </div>
+            <div class="u-align-center u-border-2 u-border-white u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2"><span class="u-align-center u-custom-item u-file-icon u-icon u-icon-2"><img src="images/2tak.PNG" alt=""></span>
+                <h3 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="2250" data-animation-delay="0">+50</h3>
+                <h5 class="u-align-center u-custom-item u-text u-text-body-alt-color u-text-6">Nainštalovaných fotovoltických systémov<br><span style="font-weight: 400;"> (Fotovoltické panely pre domácnosti aj firmy) </span>
+                </h5>
+              </div>
+            </div>
+            <div class="u-align-center u-border-2 u-border-white u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-3"><span class="u-align-center u-custom-item u-file-icon u-icon u-icon-3"><img src="images/3tak.PNG" alt=""></span>
+                <h3 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-7" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="2250" data-animation-delay="0">+100</h3>
+                <h5 class="u-align-center u-custom-item u-text u-text-body-alt-color u-text-8"> Vykonaných elektroinštalácií a revízií<br><span style="font-weight: 400;"> (kompletné elektroinštalácie + revízne správy)</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="u-clearfix u-section-4" id="sec-fb9e">
-      <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
             <div class="u-layout-row" style="">
@@ -187,47 +308,48 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                   <h2 class="u-align-left u-text u-text-custom-color-1 u-text-default u-text-1">
                     <a href="https://www.stech.sk/#home" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1">Niečo o nás</a>
                   </h2>
-                  <p class="u-align-left u-text u-text-2"> Špecializujeme sa na komplexné elektroinštalačné práce, rekonštrukcie a montáže bleskozvodov pre rezidenčné aj komerčné objekty. Poskytujeme aj odborné revízie a zabezpečujeme, aby všetky naše riešenia spĺňali platné normy a najvyššie kvalitatívne štandardy.Sme mladý, dynamický tím, ktorý sa neustále vzdeláva a sleduje nové trendy v oblasti elektroinštalácií. Inovácie a moderné technológie sú pre nás štandardom, vďaka čomu si poradíme aj s najnáročnejšími projektmi.</p>
+                  <p class="u-align-justify u-text u-text-2"> Sme elektroinštalačná firma, ktorá od roku 2020 ponúka spoľahlivé riešenia pre domácnosti aj firmy. Od začiatku sa snažíme rásť bez kompromisov – každý projekt berieme vážne a pristupujeme k nemu s dôrazom na detail.
+Nezáleží na veľkosti zákazky – vždy hľadáme najlepšie možné riešenie, ktoré dáva zmysel, vydrží a zákazníkovi reálne pomôže. Zakladáme si na odbornosti, kvalitnej práci a úprimnej komunikácii.</p>
                   <a href="#" class="u-btn u-button-style u-custom-color-1 u-hidden-lg u-hidden-xl u-hidden-xs u-btn-2">Button</a>
                 </div>
               </div>
-              <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2" src="">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2" src="">
-                  <img class="custom-expanded u-image lazyload u-image-1" data-image-width="1080" data-image-height="1080" data-src="images/90fc53c9.svg" loading="lazy">
-                  <div class="custom-expanded u-carousel u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-a6af">
+              <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2" src="">
+                <div class="u-container-layout u-valign-middle u-container-layout-2" src="">
+                  <div class="u-carousel u-expanded-width-xs u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1" data-interval="5000" data-u-ride="false" id="carousel-9bb3">
                     <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="3" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="4" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="5" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="6" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="7" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-                      <li data-u-target="#carousel-a6af" data-u-slide-to="8" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="3" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="4" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="5" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="6" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                      <li data-u-target="#carousel-9bb3" data-u-slide-to="7" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
                     </ol>
                     <div class="u-carousel-inner u-gallery-inner u-gallery-inner-1" role="listbox">
                       <div class="u-active u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-1">
-                        <div class="u-back-slide" data-image-width="1600" data-image-height="1200">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/Elektro1.jpeg" loading="lazy">
+                        <div class="u-back-slide" data-image-width="2048" data-image-height="1536">
+                          <img class="u-back-image u-expanded u-image-contain lazyload" data-src="images/09fbb1da-7e18-4e2a-9ac3-e75491904add.jpeg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-1">
-                          <h3 class="u-gallery-heading">Sample Title</h3>
+                          <h3 class="u-gallery-heading" style="text-decoration: underline !important;">Sample Title</h3>
                           <p class="u-gallery-text">Sample Text</p>
                         </div>
                       </div>
-                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-2">
-                        <div class="u-back-slide" data-image-width="1600" data-image-height="1200">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/elektro5.jpeg" loading="lazy">
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-2" data-image-width="1600" data-image-height="1200">
+                        <div class="u-back-slide" data-image-width="828" data-image-height="1104">
+                          <img class="u-back-image u-expanded u-image-contain lazyload u-back-image-2" data-src="images/8e2f741f-33e6-41cc-b89a-cb3ef02144ca.jpeg" loading="lazy">
                         </div>
-                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-2">
-                          <h3 class="u-gallery-heading">Sample Title</h3>
-                          <p class="u-gallery-text">Sample Text</p>
-                        </div>
+                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-2"></div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD"></style>
+                        <style data-mode="SM"></style>
+                        <style data-mode="XS" data-visited="true"></style>
                       </div>
-                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-3" data-image-width="1600" data-image-height="1200">
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-3" data-image-width="1200" data-image-height="1600">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.31.jpeg" loading="lazy">
+                          <img class="u-back-image u-expanded lazyload u-back-image-3" data-src="images/Elektro6.jpeg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-3"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -238,7 +360,7 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                       </div>
                       <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-4" data-image-width="1200" data-image-height="1600">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload u-back-image-4" data-src="images/Elektro6.jpeg" loading="lazy">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.34.jpeg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-4"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -247,9 +369,9 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                         <style data-mode="SM"></style>
                         <style data-mode="XS" data-visited="true"></style>
                       </div>
-                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-5" data-image-width="1200" data-image-height="1600">
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-5" data-image-width="1240" data-image-height="930">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.34.jpeg" loading="lazy">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/IMG_0972.jpg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-5"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -258,9 +380,9 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                         <style data-mode="SM"></style>
                         <style data-mode="XS" data-visited="true"></style>
                       </div>
-                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-6" data-image-width="1240" data-image-height="930">
+                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-6" data-image-width="1200" data-image-height="1600">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/IMG_0972.jpg" loading="lazy">
+                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.25.jpeg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-6"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -271,7 +393,7 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                       </div>
                       <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-7" data-image-width="1200" data-image-height="1600">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload" data-src="images/WhatsAppImage2025-03-12at20.18.25.jpeg" loading="lazy">
+                          <img class="u-back-image u-expanded lazyload u-back-image-7" data-src="images/WhatsAppImage2025-03-12at20.18.302.jpeg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-7"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -281,8 +403,8 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                         <style data-mode="XS" data-visited="true"></style>
                       </div>
                       <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-8" data-image-width="1200" data-image-height="1600">
-                        <div class="u-back-slide">
-                          <img class="u-back-image u-expanded lazyload u-back-image-8" data-src="images/WhatsAppImage2025-03-12at20.18.302.jpeg" loading="lazy">
+                        <div class="u-back-slide" data-image-width="697" data-image-height="930">
+                          <img class="u-back-image u-expanded lazyload u-back-image-8" data-src="images/IMG_0741.jpg" loading="lazy">
                         </div>
                         <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-8"></div>
                         <style data-mode="XL" data-visited="true"></style>
@@ -291,19 +413,8 @@ borders: top right bottom left !important; border-color: #404040 !important; bor
                         <style data-mode="SM"></style>
                         <style data-mode="XS" data-visited="true"></style>
                       </div>
-                      <div class="u-carousel-item u-effect-hover-zoomOut u-gallery-item u-carousel-item-9" data-image-width="1200" data-image-height="1600">
-                        <div class="u-back-slide" data-image-width="697" data-image-height="930">
-                          <img class="u-back-image u-expanded lazyload u-back-image-9" data-src="images/IMG_0741.jpg" loading="lazy">
-                        </div>
-                        <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-9"></div>
-                        <style data-mode="XL" data-visited="true"></style>
-                        <style data-mode="LG" data-visited="true"></style>
-                        <style data-mode="MD"></style>
-                        <style data-mode="SM"></style>
-                        <style data-mode="XS" data-visited="true"></style>
-                      </div>
                     </div>
-                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-a6af" role="button" data-u-slide="prev"><span aria-hidden="true">
+                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-9bb3" role="button" data-u-slide="prev"><span aria-hidden="true">
                         <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
 c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
 c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span><span class="sr-only">
@@ -311,7 +422,7 @@ c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,23
 c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
 c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span>
                     </a>
-                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-a6af" role="button" data-u-slide="next"><span aria-hidden="true">
+                    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-9bb3" role="button" data-u-slide="next"><span aria-hidden="true">
                         <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
 L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
 c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span><span class="sr-only">
@@ -333,7 +444,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-gradient u-section-6" id="sec-05ae">
-      <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xs u-sheet-1">
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
@@ -375,6 +486,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                           <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
                           <input type="hidden" value="" name="recaptchaResponse">
                           <input type="hidden" name="formServices" value="895fcbe5-ce9d-792f-a04d-2b6db097d6aa">
+                          <input type="hidden" name="siteKey" value="6LeoE3srAAAAANaa-4y4dOcA8o_gwJN3inl_m_Lr">
                         </form>
                       </div>
                     </div>
@@ -389,13 +501,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     
     
     
-    <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-top-xs u-sheet-1">
-        <h3 class="u-headline u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
-          <a href="/"><span class="u-text-palette-3-base">S</span>-TECH
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="custom-expanded u-clearfix u-group-elements u-group-elements-1">
+          <h3 class="u-align-left u-headline u-text u-text-1">
+            <a href="/"><span class="u-text-palette-3-base">S</span>-TECH
+            </a>
+          </h3>
+        </div>
+        <div class="u-clearfix u-group-elements u-group-elements-2" data-target="_blank" data-href="https://webbezobalu.sk">
+          <a href="" class="u-image u-logo u-image-1" data-image-width="4000" data-image-height="4000">
+            <img src="images/logobezoblau1.png" class="u-logo-image u-logo-image-1">
           </a>
-        </h3>
-        <p class="u-text u-text-default u-text-2"> © 2025 S-TECH Elektroinštalácie.</p>
-        <p class="u-text u-text-3">KONTAKT-​ uselvek@gmail.com|​+421 907 419 466</p>
-      </div></footer>
+          <p class="u-text u-text-default u-text-2"> Webdesign-</p>
+        </div>
+        <p class="u-text u-text-default u-text-3">© 2025 S-TECH Elektroinštalácie. </p>
+        <p class="u-align-left-xs u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-4">KONTAK-+421 907 419 466|uselvek@gmail.com </p>
+      </div></footer><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; right: 40px; bottom: 70px;" class="u-back-to-top u-icon u-opacity u-opacity-90 u-text-palette-3-base" data-href="#"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg><svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg></span>
   
 </body></html>

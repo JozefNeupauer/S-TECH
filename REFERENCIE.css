@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 2070px;
+  min-height: 2728px;
   margin-bottom: 0;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .u-section-1 .u-gallery-1 {
-  height: 1200px;
+  height: 1505px;
   margin-top: 33px;
   margin-bottom: 0;
 }
@@ -94,22 +94,6 @@
   padding: 20px;
 }
 
-.u-section-1 .u-text-2 {
-  margin: 38px 557px 0 0;
-}
-
-.u-section-1 .u-gallery-2 {
-  height: 592px;
-  margin-top: 33px;
-  margin-bottom: 38px;
-  width: 100%;
-}
-
-.u-section-1 .u-gallery-inner-2 {
-  --gap: 10px;
-  grid-template-columns: repeat(3, auto);
-}
-
 .u-section-1 .u-over-slide-13 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
   padding: 20px;
@@ -120,13 +104,24 @@
   padding: 20px;
 }
 
-.u-section-1 .u-back-image-15 {
-  object-position: 86.76% 50%;
-}
-
 .u-section-1 .u-over-slide-15 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
   padding: 20px;
+}
+
+.u-section-1 .u-text-2 {
+  margin: 38px 557px 0 0;
+}
+
+.u-section-1 .u-gallery-2 {
+  height: 1247px;
+  margin-top: 33px;
+  margin-bottom: 60px;
+}
+
+.u-section-1 .u-gallery-inner-2 {
+  --gap: 7px;
+  grid-template-columns: repeat(3, auto);
 }
 
 .u-section-1 .u-over-slide-16 {
@@ -134,13 +129,13 @@
   padding: 20px;
 }
 
-.u-section-1 .u-back-image-17 {
-  object-position: 50% 27.79%;
-}
-
 .u-section-1 .u-over-slide-17 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
   padding: 20px;
+}
+
+.u-section-1 .u-back-image-18 {
+  object-position: 86.76% 50%;
 }
 
 .u-section-1 .u-over-slide-18 {
@@ -148,13 +143,62 @@
   padding: 20px;
 }
 
+.u-section-1 .u-over-slide-19 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-back-image-20 {
+  object-position: 50% 27.79%;
+}
+
+.u-section-1 .u-over-slide-20 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-21 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-22 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-23 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-24 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-25 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-26 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
+.u-section-1 .u-over-slide-27 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  padding: 20px;
+}
+
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 1859px;
+    min-height: 2409px;
   }
 
   .u-section-1 .u-gallery-1 {
-    height: 989px;
+    height: 1241px;
   }
 
   .u-section-1 .u-text-2 {
@@ -162,17 +206,17 @@
   }
 
   .u-section-1 .u-gallery-2 {
-    width: auto;
+    height: 1028px;
   }
 }
 
 @media (max-width: 991px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 3314px;
+    min-height: 3492px;
   }
 
   .u-section-1 .u-gallery-1 {
-    height: 1704px;
+    height: 2281px;
   }
 
   .u-section-1 .u-gallery-inner-1 {
@@ -184,8 +228,7 @@
   }
 
   .u-section-1 .u-gallery-2 {
-    height: 1332px;
-    width: auto;
+    height: 1772px;
   }
 
   .u-section-1 .u-gallery-inner-2 {
@@ -195,11 +238,11 @@
 
 @media (max-width: 767px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 10718px;
+    min-height: 8654px;
   }
 
   .u-section-1 .u-gallery-1 {
-    height: 5112px;
+    height: 6415px;
   }
 
   .u-section-1 .u-gallery-inner-1 {
@@ -211,8 +254,7 @@
   }
 
   .u-section-1 .u-gallery-2 {
-    height: 5328px;
-    width: auto;
+    height: 5316px;
   }
 
   .u-section-1 .u-gallery-inner-2 {
@@ -226,12 +268,11 @@
   }
 
   .u-section-1 .u-gallery-1 {
-    height: 3219px;
+    height: 4039px;
   }
 
   .u-section-1 .u-gallery-2 {
     margin-bottom: 33px;
-    height: 4212px;
-    width: auto;
+    height: 3347px;
   }
 }
